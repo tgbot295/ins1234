@@ -901,5 +901,185 @@
     "supplier": "",
     "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834898",
     "sold": 0
+  },
+  {
+    "id": "M54",
+    "code": "M54",
+    "name": "LV 水桶 BB 老花水桶包",
+    "name_en": "LV Bucket BB (M46581)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M54.jpg"
+    ],
+    "costCny": 290,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851231",
+    "sold": 21
+  },
+  {
+    "id": "M55",
+    "code": "M55",
+    "name": "LV Camera Box 盒子包",
+    "name_en": "LV Camera Box (M82465)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M55.jpg"
+    ],
+    "costCny": 320,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851226",
+    "sold": 5
+  },
+  {
+    "id": "M56",
+    "code": "M56",
+    "name": "LV 发财桶",
+    "name_en": "LV Bucket Bag (M43986)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M56.jpg"
+    ],
+    "costCny": 350,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851241",
+    "sold": 0
+  },
+  {
+    "id": "M57",
+    "code": "M57",
+    "name": "LV Neverfull BB",
+    "name_en": "LV Neverfull BB (M46705)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M57.jpg"
+    ],
+    "costCny": 320,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851236",
+    "sold": 80
+  },
+  {
+    "id": "M58",
+    "code": "M58",
+    "name": "LV OnTheGo 小号（丛林）",
+    "name_en": "LV OnTheGo PM (M46373)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M58.jpg"
+    ],
+    "costCny": 580,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851198",
+    "sold": 7
+  },
+  {
+    "id": "M59",
+    "code": "M59",
+    "name": "LV Carryall Dark 小号（黑武士）",
+    "name_en": "LV Carryall Dark PM (M24861)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M59.jpg"
+    ],
+    "costCny": 750,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851193",
+    "sold": 8
+  },
+  {
+    "id": "M60",
+    "code": "M60",
+    "name": "LV 黄牛角月牙形手袋",
+    "name_en": "LV Crescent Bag (M45832)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M60.jpg"
+    ],
+    "costCny": 580,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851085",
+    "sold": 43
+  },
+  {
+    "id": "M61",
+    "code": "M61",
+    "name": "LV Nano Speedy 蓝色丹宁牛仔",
+    "name_en": "LV Nano Speedy Denim (M82950)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M61.jpg"
+    ],
+    "costCny": 540,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1170855021",
+    "sold": 0
+  },
+  {
+    "id": "M62",
+    "code": "M62",
+    "name": "LV Alma Soft 手提包",
+    "name_en": "LV Alma Soft",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M62.jpg"
+    ],
+    "costCny": 230,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852516",
+    "sold": 8
+  },
+  {
+    "id": "M63",
+    "code": "M63",
+    "name": "LV Mini Pochette Accessories 老花",
+    "name_en": "LV Mini Pochette Accessories (N58009)",
+    "brand": "Louis Vuitton",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M63.jpg"
+    ],
+    "costCny": 555,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852805",
+    "sold": 86
   }
 ]
