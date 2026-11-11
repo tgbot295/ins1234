@@ -56,3 +56,5 @@ footer a{color:#25d366}
 @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:16px}.top-btn span{display:none}}
 .price{font-weight:700;margin:4px 0}
 .d-price{font-weight:700;font-size:18px;margin:6px 0}
+.store-logo{height:34px;width:auto;vertical-align:middle;margin-right:8px;border-radius:50%}
+.banner img{width:100%;height:320px;object-fit:cover}
