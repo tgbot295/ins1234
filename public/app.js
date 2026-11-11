@@ -22,21 +22,30 @@ function waLink(p) {
     : `Hi, I'm interested in this product: ${dispName(p)} (Code: ${p.code})`;
   return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
-// 分享到 Instagram：手机用系统分享（可直接选 Instagram 发给我们），
-// 电脑不支持系统分享时复制商品链接并打开我们的 IG 主页
-const IG_PROFILE = 'https://www.instagram.com/mm8989221/';
-async function shareToIG(p, imgSrc) {
+// 分享弹窗：像 Mercury 那样，列出各平台 + 下载 + 复制链接
+function shareImgUrl(p, imgSrc) {
   const img = imgSrc || (p.images && p.images[0]) || '';
-  const imgUrl = img ? (img.startsWith('http') ? img : location.origin + img) : location.href;
-  const text = lang === 'zh'
-    ? `我想咨询这件商品：${p.name}（编号：${p.code}）`
-    : `I'm interested in this product: ${dispName(p)} (Code: ${p.code})`;
-  if (navigator.share) {
-    try { await navigator.share({ title: dispName(p), text, url: imgUrl }); return; } catch (e) { if (e && e.name === 'AbortError') return; }
-  }
-  try { await navigator.clipboard.writeText(`${text}\n${imgUrl}`); alert(lang === 'zh' ? '商品链接已复制，去 Instagram 发给我们吧' : 'Product link copied — send it to us on Instagram'); } catch (e) { /* clipboard blocked */ }
-  window.open(IG_PROFILE, '_blank');
+  return img ? (img.startsWith('http') ? img : location.origin + img) : location.href;
 }
+function openShare(p, imgSrc) {
+  if (!p) return;
+  window._shareP = p; window._shareImg = imgSrc || (p.images && p.images[0]) || '';
+  const url = shareImgUrl(p, window._shareImg);
+  const text = `${dispName(p)} (Code: ${p.code})`;
+  const enc = encodeURIComponent;
+  const set = (id, href) => { const el = document.getElementById(id); if (el) el.href = href; };
+  set('shWa', `https://wa.me/${cfg.whatsappNumber}?text=${enc(text + '\n' + url)}`);
+  set('shFb', `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`);
+  set('shMs', `https://www.facebook.com/dialog/send?link=${enc(url)}&app_id=0&redirect_uri=${enc(url)}`);
+  set('shX', `https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(url)}`);
+  set('shPin', `https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(url)}&description=${enc(text)}`);
+  set('shLine', `https://social-plugins.line.me/lineit/share?url=${enc(url)}`);
+  set('shIn', `https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}`);
+  const dl = document.getElementById('shDl');
+  if (dl) { dl.href = url; dl.setAttribute('download', (p.code || 'product') + '.jpg'); }
+  document.getElementById('shareModal').classList.remove('hidden');
+}
+function closeShare() { document.getElementById('shareModal').classList.add('hidden'); }
 function waGeneral() {
   const msg = lang === 'zh' ? '你好，我想咨询商品。' : 'Hi, I would like to ask about your products.';
   return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
@@ -96,7 +105,7 @@ function render() {
   wrap.querySelectorAll('.card').forEach((card) => {
     card.onclick = () => openDetail(products.find((p) => p.id === card.dataset.id));
     const sb = card.querySelector('.share-btn');
-    if (sb) sb.onclick = (e) => { e.stopPropagation(); const p = products.find((x) => x.id === card.dataset.id); shareToIG(p); };
+    if (sb) sb.onclick = (e) => { e.stopPropagation(); const p = products.find((x) => x.id === card.dataset.id); openShare(p); };
   });
 }
 
@@ -118,7 +127,7 @@ function showGal() {
   const img = document.getElementById('galImg');
   img.src = galImgs[galIdx] || '';
   const ds = document.getElementById('dShare');
-  if (ds && window._curP) ds.onclick = (e) => { e.preventDefault(); shareToIG(window._curP, galImgs[galIdx]); };
+  if (ds && window._curP) ds.onclick = (e) => { e.preventDefault(); openShare(window._curP, galImgs[galIdx]); };
   document.getElementById('galCount').textContent = galImgs.length ? `${galIdx + 1}/${galImgs.length}` : '';
   document.getElementById('galThumbs').innerHTML = galImgs.map((s, i) =>
     `<img src="${s}" class="${i === galIdx ? 'active' : ''}" data-i="${i}">`).join('');
@@ -137,6 +146,20 @@ galImg.addEventListener('touchend', (e) => {
 }, { passive: true });
 document.getElementById('detailClose').onclick = () => document.getElementById('detailModal').classList.add('hidden');
 document.getElementById('detailModal').onclick = (e) => { if (e.target.id === 'detailModal') e.target.classList.add('hidden'); };
+
+document.getElementById('shareClose').onclick = closeShare;
+document.getElementById('shareModal').onclick = (e) => { if (e.target.id === 'shareModal') closeShare(); };
+document.getElementById('shCopy').onclick = async () => {
+  const p = window._shareP; if (!p) return;
+  const link = shareImgUrl(p, window._shareImg);
+  try { await navigator.clipboard.writeText(link); document.getElementById('shCopy').textContent = '✓ 已复制'; setTimeout(() => { document.getElementById('shCopy').textContent = '复制链接'; }, 1500); } catch (e) { prompt('复制链接：', link); }
+};
+document.getElementById('shMore').onclick = async () => {
+  const p = window._shareP; if (!p) return;
+  const url = shareImgUrl(p, window._shareImg);
+  if (navigator.share) { try { await navigator.share({ title: dispName(p), text: `${dispName(p)} (Code: ${p.code})`, url }); } catch (e) {} }
+  closeShare();
+};
 
 // 抽屉 / 搜索 / 语言
 function closeDrawer() { document.getElementById('drawer').classList.remove('open'); document.getElementById('drawerOverlay').classList.add('hidden'); }
