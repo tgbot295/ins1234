@@ -4,3 +4,6 @@ public/uploads/*
 !public/uploads/.gitkeep
 *.log
 .DS_Store
+
+# 访问统计是服务器本地数据，不进仓库
+data/stats.json
