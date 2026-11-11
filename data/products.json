@@ -392,27 +392,27 @@
     "published": true,
     "images": [
       "/images/1252821637.jpg"
-    ]
-  },
-  {
-    "id": "1252821631",
-    "code": "1252821631",
-    "name": "Gucci Jetset Marmont 黑色帆布",
-    "name_en": "Gucci Jetset Marmont Black Canvas Bag",
-    "brand": "Gucci",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252821631.jpg"
+    ],
+    "variants": [
+      {
+        "color": "米色",
+        "color_en": "Beige",
+        "code": "1252821637",
+        "image": "/images/1252821637.jpg"
+      },
+      {
+        "color": "黑色帆布",
+        "color_en": "Black Canvas",
+        "code": "1252821631",
+        "image": "/images/1252821631.jpg"
+      }
     ]
   },
   {
     "id": "1252824214",
     "code": "1252824214",
-    "name": "Chanel A81081 链条小卡包 大红",
-    "name_en": "Chanel A81081 Chain Card Bag Red",
+    "name": "Chanel A81081 链条小卡包",
+    "name_en": "Chanel A81081 Chain Card Bag",
     "brand": "Chanel",
     "category": "bags",
     "price": null,
@@ -420,13 +420,27 @@
     "published": true,
     "images": [
       "/images/1252824214.jpg"
+    ],
+    "variants": [
+      {
+        "color": "大红",
+        "color_en": "Red",
+        "code": "1252824214",
+        "image": "/images/1252824214.jpg"
+      },
+      {
+        "color": "浅蓝",
+        "color_en": "Light Blue",
+        "code": "1252824171",
+        "image": "/images/1252824171.jpg"
+      }
     ]
   },
   {
     "id": "1252824179",
     "code": "1252824179",
-    "name": "Chanel 26K 月牙 Hobo 黑金",
-    "name_en": "Chanel 26K Crescent Hobo Black Gold",
+    "name": "Chanel 26K 月牙 Hobo",
+    "name_en": "Chanel 26K Crescent Hobo",
     "brand": "Chanel",
     "category": "bags",
     "price": null,
@@ -434,69 +448,39 @@
     "published": true,
     "images": [
       "/images/1252824179.jpg"
-    ]
-  },
-  {
-    "id": "1252824170",
-    "code": "1252824170",
-    "name": "Chanel 26K 月牙 Hobo 酒红",
-    "name_en": "Chanel 26K Crescent Hobo Burgundy",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252824170.jpg"
-    ]
-  },
-  {
-    "id": "1252824161",
-    "code": "1252824161",
-    "name": "Chanel 26K 月牙 Hobo 绿色",
-    "name_en": "Chanel 26K Crescent Hobo Green",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252824161.jpg"
-    ]
-  },
-  {
-    "id": "1252824171",
-    "code": "1252824171",
-    "name": "Chanel A81081 链条小卡包 浅蓝",
-    "name_en": "Chanel A81081 Chain Card Bag Light Blue",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252824171.jpg"
-    ]
-  },
-  {
-    "id": "1252824151",
-    "code": "1252824151",
-    "name": "Chanel 26K 月牙 Hobo 白色",
-    "name_en": "Chanel 26K Crescent Hobo White",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252824151.jpg"
+    ],
+    "variants": [
+      {
+        "color": "黑金",
+        "color_en": "Black Gold",
+        "code": "1252824179",
+        "image": "/images/1252824179.jpg"
+      },
+      {
+        "color": "酒红",
+        "color_en": "Burgundy",
+        "code": "1252824170",
+        "image": "/images/1252824170.jpg"
+      },
+      {
+        "color": "绿色",
+        "color_en": "Green",
+        "code": "1252824161",
+        "image": "/images/1252824161.jpg"
+      },
+      {
+        "color": "白色",
+        "color_en": "White",
+        "code": "1252824151",
+        "image": "/images/1252824151.jpg"
+      }
     ]
   },
   {
     "id": "1247086372",
     "code": "1247086372",
-    "name": "LV P198 圆领针织毛衣 橙色",
-    "name_en": "LV P198 Round-Neck Knit Sweater Orange",
+    "name": "LV 圆领针织毛衣",
+    "name_en": "LV Crew Neck Knit Sweater",
     "brand": "Louis Vuitton",
     "category": "clothing",
     "price": null,
@@ -504,6 +488,20 @@
     "published": true,
     "images": [
       "/images/1247086372.jpg"
+    ],
+    "variants": [
+      {
+        "color": "橙色",
+        "color_en": "Orange",
+        "code": "1247086372",
+        "image": "/images/1247086372.jpg"
+      },
+      {
+        "color": "红色",
+        "color_en": "Red",
+        "code": "1247086359",
+        "image": "/images/1247086359.jpg"
+      }
     ]
   },
   {
@@ -518,20 +516,6 @@
     "published": true,
     "images": [
       "/images/1247086266.jpg"
-    ]
-  },
-  {
-    "id": "1247086359",
-    "code": "1247086359",
-    "name": "LV P208 圆领针织毛衣 红色",
-    "name_en": "LV P208 Round-Neck Knit Sweater Red",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1247086359.jpg"
     ]
   },
   {
@@ -565,8 +549,8 @@
   {
     "id": "1243635150",
     "code": "1243635150",
-    "name": "Loro Piana 乐福鞋 雾霾蓝",
-    "name_en": "Loro Piana Loafers Haze Blue",
+    "name": "Loro Piana 乐福鞋",
+    "name_en": "Loro Piana Loafers",
     "brand": "Loro Piana",
     "category": "shoes",
     "price": null,
@@ -574,48 +558,32 @@
     "published": true,
     "images": [
       "/images/1243635150.jpg"
-    ]
-  },
-  {
-    "id": "1243635173",
-    "code": "1243635173",
-    "name": "Loro Piana 乐福鞋 粉色",
-    "name_en": "Loro Piana Loafers Pink",
-    "brand": "Loro Piana",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1243635173.jpg"
-    ]
-  },
-  {
-    "id": "1243635169",
-    "code": "1243635169",
-    "name": "Loro Piana 乐福鞋 黑色",
-    "name_en": "Loro Piana Loafers Black",
-    "brand": "Loro Piana",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1243635169.jpg"
-    ]
-  },
-  {
-    "id": "1243635007",
-    "code": "1243635007",
-    "name": "Loro Piana 乐福鞋 南极白",
-    "name_en": "Loro Piana Loafers White",
-    "brand": "Loro Piana",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1243635007.jpg"
+    ],
+    "variants": [
+      {
+        "color": "雾霾蓝",
+        "color_en": "Haze Blue",
+        "code": "1243635150",
+        "image": "/images/1243635150.jpg"
+      },
+      {
+        "color": "粉色",
+        "color_en": "Pink",
+        "code": "1243635173",
+        "image": "/images/1243635173.jpg"
+      },
+      {
+        "color": "黑色",
+        "color_en": "Black",
+        "code": "1243635169",
+        "image": "/images/1243635169.jpg"
+      },
+      {
+        "color": "南极白",
+        "color_en": "White",
+        "code": "1243635007",
+        "image": "/images/1243635007.jpg"
+      }
     ]
   },
   {

@@ -9,17 +9,25 @@ let query = '';
 let galImgs = [], galIdx = 0;
 
 const I18N = {
-  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
-  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
+  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', color: 'Color', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
+  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', color: '颜色', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
 };
 const t = (k) => (I18N[lang] && I18N[lang][k]) || I18N.en[k] || k;
 const dispName = (p) => lang === 'zh' ? p.name : (p.name_en || p.name);
 const catLabel = (c) => c === 'all' ? t('all') : t(c) || c;
 
-function waLink(p) {
+// 同款多色：一个商品 + variants[{color,color_en,code,image}]；详情里点颜色切换，翻页一样
+const varLabel = (v) => lang === 'zh' ? v.color : (v.color_en || v.color);
+const curVar = (p) => (p.variants && p.variants.length && window._curV != null) ? p.variants[window._curV] : (p.variants && p.variants[0]);
+const curCode = (p) => { const v = curVar(p); return v ? v.code : p.code; };
+
+function waLink(p, vIdx) {
+  const v = (p.variants && p.variants.length) ? p.variants[vIdx != null ? vIdx : (window._curV || 0)] || p.variants[0] : null;
+  const code = v ? v.code : p.code;
+  const name = dispName(p) + (v ? ' - ' + varLabel(v) : '');
   const msg = lang === 'zh'
-    ? `你好，我想咨询这件商品：${p.name}（编号：${p.code}）`
-    : `Hi, I'm interested in this product: ${dispName(p)} (Code: ${p.code})`;
+    ? `你好，我想咨询这件商品：${name}（编号：${code}）`
+    : `Hi, I'm interested in this product: ${name} (Code: ${code})`;
   return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
 // 分享弹窗：像 Mercury 那样，列出各平台 + 下载 + 复制链接
@@ -31,7 +39,7 @@ function openShare(p, imgSrc) {
   if (!p) return;
   window._shareP = p; window._shareImg = imgSrc || (p.images && p.images[0]) || '';
   const url = shareImgUrl(p, window._shareImg);
-  const text = `${dispName(p)} (Code: ${p.code})`;
+  const text = `${dispName(p)} (Code: ${curCode(p)})`;
   const enc = encodeURIComponent;
   const set = (id, href) => { const el = document.getElementById(id); if (el) el.href = href; };
   set('shWa', `https://wa.me/${cfg.whatsappNumber}?text=${enc(text + '\n' + url)}`);
@@ -70,7 +78,7 @@ function filtered() {
   const q = query.trim().toLowerCase();
   return products.filter((p) => (activeCat === 'all' || p.category === activeCat) &&
     (!activeBrand || p.brand === activeBrand) &&
-    (!q || p.name.toLowerCase().includes(q) || (p.name_en || '').toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.code.includes(q)));
+    (!q || p.name.toLowerCase().includes(q) || (p.name_en || '').toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.code.includes(q) || (p.variants || []).some((v) => v.code.includes(q) || v.color.toLowerCase().includes(q) || (v.color_en || '').toLowerCase().includes(q))));
 }
 
 function render() {
@@ -95,10 +103,11 @@ function render() {
           <button class="share-btn" title="Share" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></button>
           <img src="${p.images[0] || ''}" alt="" loading="lazy">
           <div class="name">${dispName(p)}</div>
+          ${p.variants && p.variants.length > 1 ? `<div class="var-colors">${p.variants.map((v) => varLabel(v)).join(' · ')}</div>` : ''}
           ${p.price != null && p.price !== '' ? `<div class="price">$${p.price}</div>` : ''}
           <div class="actions">
             <button class="detail-btn">${t('viewDetails')}</button>
-            <a href="${waLink(p)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">WhatsApp</a>
+            <a href="${waLink(p, 0)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">WhatsApp</a>
           </div>
         </div>`).join('')}
     </div></section>`).join('');
@@ -109,10 +118,11 @@ function render() {
   });
 }
 
-// 详情弹窗（多图画廊：箭头 / 缩略图 / 滑动）
+// 详情弹窗（多图画廊：箭头 / 缩略图 / 滑动；同款多色在详情里点颜色分页切换）
 function openDetail(p) {
   if (!p) return;
   window._curP = p;
+  window._curV = 0;
   galImgs = p.images && p.images.length ? p.images : [];
   galIdx = 0;
   document.getElementById('dName').textContent = dispName(p);
@@ -120,8 +130,28 @@ function openDetail(p) {
   document.getElementById('dCode').textContent = p.code;
   document.getElementById('dPrice').textContent = p.price != null && p.price !== '' ? '$' + p.price : '';
   document.getElementById('dWa').href = waLink(p);
+  renderVariants(p);
   showGal();
   document.getElementById('detailModal').classList.remove('hidden');
+}
+function renderVariants(p) {
+  const box = document.getElementById('dVariants');
+  if (!box) return;
+  if (!p.variants || p.variants.length < 2) { box.innerHTML = ''; return; }
+  box.innerHTML = `<span class="var-label">${t('color')}:</span>` + p.variants.map((v, i) =>
+    `<button data-i="${i}" class="${i === (window._curV || 0) ? 'active' : ''}">${varLabel(v)}</button>`).join('');
+  box.querySelectorAll('button').forEach((b) => b.onclick = () => selectVariant(p, +b.dataset.i));
+}
+function selectVariant(p, i) {
+  window._curV = i;
+  const v = p.variants[i];
+  if (!v) return;
+  galImgs = [v.image];
+  galIdx = 0;
+  document.getElementById('dCode').textContent = v.code;
+  document.getElementById('dWa').href = waLink(p);
+  renderVariants(p);
+  showGal();
 }
 function showGal() {
   const img = document.getElementById('galImg');
@@ -157,7 +187,7 @@ document.getElementById('shCopy').onclick = async () => {
 document.getElementById('shIg').onclick = async () => {
   const p = window._shareP; if (!p) return;
   const url = shareImgUrl(p, window._shareImg);
-  const text = `${dispName(p)} (Code: ${p.code})`;
+  const text = `${dispName(p)} (Code: ${curCode(p)})`;
   // 手机上：把图片文件直接交给系统分享，分享单里选 Instagram，图就带过去了
   try {
     const res = await fetch(url);
