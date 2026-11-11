@@ -229,9 +229,23 @@ document.getElementById('drawerFilter').oninput = (e) => {
   const q = e.target.value.toLowerCase();
   document.querySelectorAll('#drawerCats button').forEach((b) => { b.style.display = b.textContent.toLowerCase().includes(q) ? '' : 'none'; });
 };
-document.getElementById('searchBtn').onclick = () => document.getElementById('searchBar').classList.toggle('hidden');
+// 点顶部 Search：直接跳到搜索框并聚焦键盘
+document.getElementById('searchBtn').onclick = () => {
+  const bar = document.getElementById('searchBar');
+  bar.classList.remove('hidden');
+  bar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  setTimeout(() => document.getElementById('searchInput').focus(), 300);
+};
 document.getElementById('searchClose').onclick = () => { document.getElementById('searchBar').classList.add('hidden'); query = ''; document.getElementById('searchInput').value = ''; render(); };
-document.getElementById('searchInput').oninput = (e) => { query = e.target.value; render(); };
+// 输入搜索词后自动跳到商品区；回车也跳
+const scrollToProducts = () => document.getElementById('brandSections').scrollIntoView({ behavior: 'smooth' });
+document.getElementById('searchInput').oninput = (e) => { const wasEmpty = !query; query = e.target.value; render(); if (wasEmpty && query.trim()) scrollToProducts(); };
+document.getElementById('searchInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') scrollToProducts(); });
+
+// 往下滑超过一屏出现回到顶部按钮，点一下回最上
+const toTopBtn = document.getElementById('toTopBtn');
+window.addEventListener('scroll', () => toTopBtn.classList.toggle('show', window.scrollY > 500), { passive: true });
+toTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 document.getElementById('langBtn').onclick = () => { lang = lang === 'zh' ? 'en' : 'zh'; applyLang(); };
 document.querySelectorAll('.brand-logo-btn').forEach((b) => b.onclick = () => {
   activeBrand = b.dataset.brand; activeCat = 'all'; query = '';
