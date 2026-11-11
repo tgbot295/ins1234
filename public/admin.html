@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>管理后台 - M$M</title>
+<title>管理后台 - MM Luxe Shop</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f4f4;color:#222;padding:20px}
@@ -28,16 +28,28 @@ td img{width:56px;height:56px;object-fit:cover;border-radius:6px}
 .thumbs span{position:absolute;top:-6px;right:-6px;background:#e5484d;color:#fff;border-radius:50%;width:20px;height:20px;text-align:center;line-height:20px;cursor:pointer;font-size:12px}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 a{color:#25d366}
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-card{width:100%;max-width:380px;background:#fff;border-radius:16px;padding:36px 32px 30px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.login-card img.logo{width:84px;height:84px;border-radius:50%;border:3px solid #d4af37;object-fit:cover;margin-bottom:14px}
+.login-card h1{font-size:22px;margin-bottom:4px}
+.login-card .brand{font-size:13px;letter-spacing:2px;color:#999;margin-bottom:24px}
+.login-card label{display:block;text-align:left}
+.login-card button{width:100%;padding:12px;font-size:15px;margin-top:6px}
+.login-card .foot{margin-top:18px;font-size:12px;color:#bbb}
 </style>
 </head>
 <body>
-<div class="box" id="loginBox">
-  <h1>管理后台登录</h1>
-  <p class="sub">Admin Login — 默认密码 admin123，上线前请务必改掉（见 README）</p>
-  <label>密码 Password</label>
-  <input id="pw" type="password" placeholder="输入管理员密码">
-  <p id="loginErr" style="color:#e5484d"></p>
-  <button id="loginBtn" class="green">登录 Login</button>
+<div class="login-wrap" id="loginBox">
+  <div class="login-card">
+    <img class="logo" src="/images/logo.png" alt="MM Luxe Shop">
+    <h1>管理后台</h1>
+    <p class="brand">MM LUXE SHOP · ADMIN</p>
+    <label>密码 Password</label>
+    <input id="pw" type="password" placeholder="输入管理员密码">
+    <p id="loginErr" style="color:#e5484d"></p>
+    <button id="loginBtn" class="green">登录 Login</button>
+    <p class="foot">仅管理员可进入</p>
+  </div>
 </div>
 
 <div class="box hidden" id="adminBox">

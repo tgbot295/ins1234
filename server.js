@@ -19,7 +19,7 @@ const config = require('./config');
 
 const PORT = parseInt(process.env.PORT || '3000', 10);
 const HOST = process.env.HOST || '0.0.0.0'; // 宝塔反向代理走 127.0.0.1:3000，0.0.0.0 包含它
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'; // 上线前务必改掉！
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '968574'; // 管理员密码（也可以在 .env 里用 ADMIN_PASSWORD 改）
 
 const DATA_FILE = path.join(__dirname, 'data', 'products.json');
 const UPLOAD_DIR = path.join(__dirname, 'public', 'uploads');
