@@ -168,10 +168,16 @@ document.getElementById('shIg').onclick = async () => {
       closeShare(); return;
     }
   } catch (e) { /* fall through */ }
-  // 退而求其次：调起 IG App 的分享页（只支持文字），再不行打开 IG 主页
+  // 退而求其次：手机调起 IG App 的分享页；电脑没有 IG 分享接口，
+  // 就复制商品信息、下载图片，再打开 IG 网页版私信，顾客粘贴/上传就能发
   const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
   if (isMobile) location.href = 'instagram://share?text=' + encodeURIComponent(text + ' ' + url);
-  else window.open('https://www.instagram.com/mm8989221/', '_blank');
+  else {
+    try { await navigator.clipboard.writeText(text + '\n' + url); } catch (e) {}
+    const a = document.createElement('a'); a.href = url; a.download = (p.code || 'product') + '.jpg'; a.click();
+    alert('商品信息已复制，图片已下载。IG 网页版私信已打开，粘贴文字、上传图片就能发给我们');
+    window.open('https://www.instagram.com/direct/inbox/', '_blank');
+  }
   closeShare();
 };
 document.getElementById('shMore').onclick = async () => {
