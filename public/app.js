@@ -157,7 +157,20 @@ document.getElementById('shCopy').onclick = async () => {
 document.getElementById('shIg').onclick = async () => {
   const p = window._shareP; if (!p) return;
   const url = shareImgUrl(p, window._shareImg);
-  if (navigator.share) { try { await navigator.share({ title: dispName(p), text: `${dispName(p)} (Code: ${p.code})`, url }); } catch (e) {} }
+  const text = `${dispName(p)} (Code: ${p.code})`;
+  // 手机上：把图片文件直接交给系统分享，分享单里选 Instagram，图就带过去了
+  try {
+    const res = await fetch(url);
+    const blob = await res.blob();
+    const file = new File([blob], (p.code || 'product') + '.jpg', { type: blob.type || 'image/jpeg' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({ files: [file], text });
+      closeShare(); return;
+    }
+  } catch (e) { /* fall through */ }
+  // 退而求其次：调起 IG App 的分享页（只支持文字），再不行打开 IG 主页
+  const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+  if (isMobile) location.href = 'instagram://share?text=' + encodeURIComponent(text + ' ' + url);
   else window.open('https://www.instagram.com/mm8989221/', '_blank');
   closeShare();
 };
