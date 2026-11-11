@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 - M$M</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f4f4;color:#222;padding:20px}
+.hidden{display:none!important}
+.box{max-width:1000px;margin:0 auto;background:#fff;border-radius:12px;padding:20px}
+h1{font-size:22px;margin-bottom:4px}
+.sub{color:#888;font-size:13px;margin-bottom:16px}
+input,select,textarea{width:100%;padding:9px;border:1px solid #ddd;border-radius:8px;font-size:14px;margin:4px 0 10px}
+label{font-size:13px;color:#555}
+button{border:none;border-radius:8px;padding:9px 16px;cursor:pointer;font-size:14px;background:#111;color:#fff}
+button.green{background:#25d366}
+button.red{background:#e5484d}
+button.grey{background:#eee;color:#222}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{border-bottom:1px solid #eee;padding:8px;text-align:left;vertical-align:middle}
+td img{width:56px;height:56px;object-fit:cover;border-radius:6px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row>div{flex:1;min-width:160px}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.thumbs div{position:relative}
+.thumbs img{width:80px;height:80px;object-fit:cover;border-radius:6px}
+.thumbs span{position:absolute;top:-6px;right:-6px;background:#e5484d;color:#fff;border-radius:50%;width:20px;height:20px;text-align:center;line-height:20px;cursor:pointer;font-size:12px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+a{color:#25d366}
+</style>
+</head>
+<body>
+<div class="box" id="loginBox">
+  <h1>管理后台登录</h1>
+  <p class="sub">Admin Login — 默认密码 admin123，上线前请务必改掉（见 README）</p>
+  <label>密码 Password</label>
+  <input id="pw" type="password" placeholder="输入管理员密码">
+  <p id="loginErr" style="color:#e5484d"></p>
+  <button id="loginBtn" class="green">登录 Login</button>
+</div>
+
+<div class="box hidden" id="adminBox">
+  <div class="topbar">
+    <div><h1>商品管理</h1><p class="sub">Products — 上传图片 / 上架 / 改价（美元 USD，留空 = 前台不显示价格）</p></div>
+    <div>
+      <a href="/" target="_blank">查看前台 ↗</a> &nbsp;
+      <button id="logoutBtn" class="grey">退出</button>
+    </div>
+  </div>
+
+  <button id="newBtn" class="green">+ 新增商品 Add Product</button>
+  <div id="formBox" class="hidden" style="margin-top:16px;border:1px solid #eee;border-radius:10px;padding:16px">
+    <h2 id="formTitle" style="font-size:17px;margin-bottom:10px">新增商品</h2>
+    <input type="hidden" id="fId">
+    <div class="row">
+      <div><label>商品名（中文）*</label><input id="fName"></div>
+      <div><label>商品名（英文）Name (EN)</label><input id="fNameEn"></div>
+    </div>
+    <div class="row">
+      <div><label>品牌 Brand</label><input id="fBrand" list="brands"><datalist id="brands"><option>Louis Vuitton</option><option>Gucci</option><option>Hermes</option><option>Dior</option><option>Chanel</option><option>Prada</option></datalist></div>
+      <div><label>分类 Category</label><select id="fCat"><option value="bags">包包 Bags</option><option value="clothing">衣服 Clothing</option><option value="shoes">鞋子 Shoes</option><option value="accessories">配饰 Accessories</option></select></div>
+      <div><label>编号 Code *</label><input id="fCode" placeholder="如 1245088195"></div>
+      <div><label>价格 USD（美元，留空 = 不显示）</label><input id="fPrice" type="number" min="0" step="0.01" placeholder="留空"></div>
+    </div>
+    <label><input type="checkbox" id="fPublished" checked style="width:auto"> 上架 Published（取消 = 前台看不到）</label>
+    <label style="display:block;margin-top:10px">商品图片（可多选：正面 / 侧面 / 细节）</label>
+    <input id="fFiles" type="file" accept="image/*" multiple>
+    <button id="uploadBtn" class="grey" type="button">上传选中图片 Upload</button>
+    <div id="fThumbs" class="thumbs"></div>
+    <div style="margin-top:10px">
+      <button id="saveBtn" class="green">保存 Save</button>
+      <button id="cancelBtn" class="grey">取消</button>
+    </div>
+  </div>
+
+  <table style="margin-top:18px">
+    <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>状态</th><th>操作</th></tr></thead>
+    <tbody id="list"></tbody>
+  </table>
+</div>
+
+<script src="/admin.js"></script>
+</body>
+</html>

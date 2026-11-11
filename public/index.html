@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M$M</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="top-left">
+    <button id="catBtn" class="top-btn">☰ <span data-i18n="category">Category</span></button>
+    <button id="searchBtn" class="top-btn">🔍 <span data-i18n="search">Search</span></button>
+  </div>
+  <div class="store-name" id="storeName">M$M</div>
+  <div class="top-right">
+    <button id="langBtn" class="lang-btn">中文</button>
+    <a id="topWa" class="wa-btn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<div id="searchBar" class="search-bar hidden">
+  <input id="searchInput" type="text" placeholder="Search products...">
+  <button id="searchClose">✕</button>
+</div>
+
+<!-- 左侧分类抽屉 -->
+<div id="drawerOverlay" class="overlay hidden"></div>
+<aside id="drawer" class="drawer">
+  <div class="drawer-head"><span data-i18n="category">Category</span><button id="drawerClose">✕</button></div>
+  <input id="drawerFilter" type="text" placeholder="Filter...">
+  <div id="drawerCats" class="drawer-cats"></div>
+</aside>
+
+<section class="banner">
+  <img src="/images/1252511303.jpg" alt="Featured">
+  <div class="banner-text"><h1 id="bannerTitle">New Season Collection</h1><p id="bannerSub">Bags · Clothing · Shoes · Accessories</p></div>
+</section>
+
+<main>
+  <div id="brandSections"></div>
+  <section class="how">
+    <h2 data-i18n="howTitle">How to order</h2>
+    <ol>
+      <li data-i18n="how1">Browse a product and tap View Details.</li>
+      <li data-i18n="how2">Tap WhatsApp — the message already includes the product name and code.</li>
+      <li data-i18n="how3">Our customer service will confirm the price and shipping with you.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div id="footerName">M$M</div>
+  <p><span data-i18n="contactUs">Contact Us:</span> <a id="footerWa" href="#" target="_blank" rel="noopener">WhatsApp <span id="waDisplay"></span></a> · Instagram mm8989221</p>
+</footer>
+
+<a id="floatWa" class="float-wa" href="#" target="_blank" rel="noopener">💬 <span data-i18n="contactUs">Contact Us</span></a>
+
+<!-- 商品详情弹窗 -->
+<div id="detailModal" class="modal hidden">
+  <div class="modal-box">
+    <button id="detailClose" class="modal-close">✕</button>
+    <div class="gallery">
+      <button id="galPrev" class="gal-arrow">‹</button>
+      <img id="galImg" src="" alt="">
+      <button id="galNext" class="gal-arrow">›</button>
+      <div id="galCount" class="gal-count"></div>
+    </div>
+    <div id="galThumbs" class="thumbs"></div>
+    <h2 id="dName"></h2>
+    <p class="d-meta"><span id="dBrand"></span> · <span data-i18n="code">Code</span>: <span id="dCode"></span></p>
+    <p id="dPrice" class="d-price"></p>
+    <div class="d-actions">
+      <a id="dWa" class="wa-btn big" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
