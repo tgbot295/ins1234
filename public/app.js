@@ -238,10 +238,26 @@ document.getElementById('searchBtn').onclick = () => {
   window.scrollTo({ top: y, behavior: 'smooth' });
   setTimeout(() => document.getElementById('searchInput').focus({ preventScroll: true }), 350);
 };
-document.getElementById('searchClose').onclick = () => { document.getElementById('searchBar').classList.add('hidden'); query = ''; document.getElementById('searchInput').value = ''; render(); };
+document.getElementById('searchClose').onclick = () => { document.getElementById('searchBar').classList.add('hidden'); document.getElementById('searchSuggest').classList.add('hidden'); query = ''; document.getElementById('searchInput').value = ''; render(); };
+// 输入关键词时，下拉显示匹配的商品名，点一下直接打开该商品详情
+function showSuggest() {
+  const box = document.getElementById('searchSuggest');
+  const q = query.trim().toLowerCase();
+  if (!q) { box.classList.add('hidden'); return; }
+  const hits = products.filter((p) => [p.name, p.name_en, p.brand, p.code, ...(p.variants || []).map((v) => v.code)].filter(Boolean).join(' ').toLowerCase().includes(q)).slice(0, 8);
+  if (!hits.length) { box.classList.add('hidden'); return; }
+  box.innerHTML = hits.map((p) => `<div class="suggest-item" data-id="${p.id}"><img src="${(p.images && p.images[0]) || ''}" alt=""><div><div class="s-name">${dispName(p)}</div><div class="s-code">${p.brand} · ${p.code}</div></div></div>`).join('');
+  box.classList.remove('hidden');
+  box.querySelectorAll('.suggest-item').forEach((el) => el.onclick = () => {
+    const p = products.find((x) => String(x.id) === el.dataset.id);
+    box.classList.add('hidden');
+    if (p) openDetail(p);
+  });
+}
+document.addEventListener('click', (e) => { if (!e.target.closest('.search-wrap')) document.getElementById('searchSuggest').classList.add('hidden'); });
 // 输入搜索词后自动跳到商品区；回车也跳
 const scrollToProducts = () => document.getElementById('brandSections').scrollIntoView({ behavior: 'smooth' });
-document.getElementById('searchInput').oninput = (e) => { const wasEmpty = !query; query = e.target.value; render(); if (wasEmpty && query.trim()) scrollToProducts(); };
+document.getElementById('searchInput').oninput = (e) => { const wasEmpty = !query; query = e.target.value; render(); showSuggest(); if (wasEmpty && query.trim()) scrollToProducts(); };
 document.getElementById('searchInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') scrollToProducts(); });
 
 // 往下滑超过一屏出现回到顶部按钮，点一下回最上
