@@ -53,8 +53,8 @@ footer a{color:#25d366}
 .d-meta{color:#888;font-size:13px;margin:6px 0 14px}
 .d-actions{display:flex;gap:10px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.banner img{height:220px}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:20px}.store-logo{height:40px;width:40px}.top-btn span{display:none}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:20px}.store-logo{height:40px;width:40px}.top-btn span{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.topbar{padding:8px 10px;gap:6px}.top-left,.top-right{gap:4px}.store-name{font-size:17px;white-space:nowrap;letter-spacing:0}.store-logo{height:36px;width:36px;margin-right:6px}.top-btn,.lang-btn{padding:5px 8px;font-size:12px}.wa-btn{padding:6px 10px;font-size:12px}.top-btn span{display:none}.banner-text h1{font-size:20px}.banner-text{left:14px;bottom:14px}}
+
 .price{font-weight:700;margin:4px 0}
 .d-price{font-weight:700;font-size:18px;margin:6px 0}
 .features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1280px;margin:16px auto 0;padding:0 16px}
