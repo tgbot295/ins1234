@@ -70,20 +70,6 @@
     ]
   },
   {
-    "id": "1252511303",
-    "code": "1252511303",
-    "name": "LV Odyssee粉色手袋 23×17",
-    "name_en": "LV Odyssee Pink Bag 23x17",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252511303.jpg"
-    ]
-  },
-  {
     "id": "1252511284",
     "code": "1252511284",
     "name": "LV Laureate系列厚底沙地靴（女款）",
@@ -109,48 +95,6 @@
     "published": true,
     "images": [
       "/images/1252511231.jpg"
-    ]
-  },
-  {
-    "id": "1252511292",
-    "code": "1252511292",
-    "name": "酷奇Gucci Marmont迷你包 18×14",
-    "name_en": "Gucci Marmont Mini Bag 18x14",
-    "brand": "Gucci",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252511292.jpg"
-    ]
-  },
-  {
-    "id": "1252511282",
-    "code": "1252511282",
-    "name": "酷奇Gucci马蒙方胖子链条包 18×14",
-    "name_en": "Gucci Marmont Chain Bag 18x14",
-    "brand": "Gucci",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252511282.jpg"
-    ]
-  },
-  {
-    "id": "1252511243",
-    "code": "1252511243",
-    "name": "酷奇Gucci Horsebit Ristretto手袋 27×16",
-    "name_en": "Gucci Horsebit Ristretto Bag 27x16",
-    "brand": "Gucci",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252511243.jpg"
     ]
   },
   {
@@ -727,34 +671,6 @@
     ]
   },
   {
-    "id": "1252834938",
-    "code": "1252834938",
-    "name": "Swarovski 爱在身边转运珠锁骨项链",
-    "name_en": "Swarovski Bead Pendant Necklace",
-    "brand": "Swarovski",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252834938.jpg"
-    ]
-  },
-  {
-    "id": "1252835005",
-    "code": "1252835005",
-    "name": "APM Monaco 几何锁扣小耳环",
-    "name_en": "APM Monaco Geometric Link Earrings",
-    "brand": "APM Monaco",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252835005.jpg"
-    ]
-  },
-  {
     "id": "1252834918",
     "code": "1252834918",
     "name": "LV 耳钉",
@@ -780,20 +696,6 @@
     "published": true,
     "images": [
       "/images/1252834877.jpg"
-    ]
-  },
-  {
-    "id": "1252834951",
-    "code": "1252834951",
-    "name": "Swarovski 镂空天鹅胸针",
-    "name_en": "Swarovski Facet Swan Brooch",
-    "brand": "Swarovski",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/1252834951.jpg"
     ]
   },
   {
