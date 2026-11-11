@@ -68,6 +68,7 @@ footer a{color:#25d366}
 .brand-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .brand-logo-btn{background:#fff;border:1px solid #eee;border-radius:12px;padding:10px 8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:130px}
 .brand-logo-btn img{max-width:92%;max-height:104px;object-fit:contain}
+.bl-small{display:none}
 .brand-logo-btn:hover{border-color:#c9a24b}
 .brand-logo-btn.active{border:2px solid #111;background:#fff;color:#111}
 .brand-logo-btn.active .bl-small{color:#111;font-weight:700}
