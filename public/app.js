@@ -22,6 +22,15 @@ function waLink(p) {
     : `Hi, I'm interested in this product: ${dispName(p)} (Code: ${p.code})`;
   return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 }
+// 分享到 WhatsApp 客服：带商品名、编号和图片链接，客服点开链接就能看到图
+function shareLink(p, imgSrc) {
+  const img = imgSrc || (p.images && p.images[0]) || '';
+  const imgUrl = img ? (img.startsWith('http') ? img : location.origin + img) : '';
+  const msg = lang === 'zh'
+    ? `你好，我想咨询这件商品：${p.name}（编号：${p.code}）\n图片：${imgUrl}`
+    : `Hi, I'm interested in this product: ${dispName(p)} (Code: ${p.code})\nPhoto: ${imgUrl}`;
+  return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+}
 function waGeneral() {
   const msg = lang === 'zh' ? '你好，我想咨询商品。' : 'Hi, I would like to ask about your products.';
   return `https://wa.me/${cfg.whatsappNumber}?text=${encodeURIComponent(msg)}`;
@@ -68,6 +77,7 @@ function render() {
     <section class="brand-section"><h2>${catLabel(c)}</h2><div class="grid">
       ${list.filter((p) => p.category === c).map((p) => `
         <div class="card" data-id="${p.id}">
+          <button class="share-btn" title="Share" aria-label="Share">↗</button>
           <img src="${p.images[0] || ''}" alt="" loading="lazy">
           <div class="name">${dispName(p)}</div>
           ${p.price != null && p.price !== '' ? `<div class="price">$${p.price}</div>` : ''}
@@ -79,12 +89,15 @@ function render() {
     </div></section>`).join('');
   wrap.querySelectorAll('.card').forEach((card) => {
     card.onclick = () => openDetail(products.find((p) => p.id === card.dataset.id));
+    const sb = card.querySelector('.share-btn');
+    if (sb) sb.onclick = (e) => { e.stopPropagation(); const p = products.find((x) => x.id === card.dataset.id); window.open(shareLink(p), '_blank'); };
   });
 }
 
 // 详情弹窗（多图画廊：箭头 / 缩略图 / 滑动）
 function openDetail(p) {
   if (!p) return;
+  window._curP = p;
   galImgs = p.images && p.images.length ? p.images : [];
   galIdx = 0;
   document.getElementById('dName').textContent = dispName(p);
@@ -92,12 +105,15 @@ function openDetail(p) {
   document.getElementById('dCode').textContent = p.code;
   document.getElementById('dPrice').textContent = p.price != null && p.price !== '' ? '$' + p.price : '';
   document.getElementById('dWa').href = waLink(p);
+  document.getElementById('dShare').href = shareLink(p, galImgs[galIdx]);
   showGal();
   document.getElementById('detailModal').classList.remove('hidden');
 }
 function showGal() {
   const img = document.getElementById('galImg');
   img.src = galImgs[galIdx] || '';
+  const ds = document.getElementById('dShare');
+  if (ds && window._curP) ds.href = shareLink(window._curP, galImgs[galIdx]);
   document.getElementById('galCount').textContent = galImgs.length ? `${galIdx + 1}/${galImgs.length}` : '';
   document.getElementById('galThumbs').innerHTML = galImgs.map((s, i) =>
     `<img src="${s}" class="${i === galIdx ? 'active' : ''}" data-i="${i}">`).join('');
