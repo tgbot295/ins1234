@@ -77,7 +77,15 @@ async function loadList() {
   try { const c = await api('/api/config'); if (c.exchangeRate) exchangeRate = c.exchangeRate; } catch (e) {}
   const j = await api('/api/admin/products');
   products = j.products || [];
-  $('list').innerHTML = products.map((p) => `<tr>
+  renderList();
+}
+
+// 按名字 / 英文名 / 品牌 / 编号 / 商家联系方式搜商品（搜到才显示，成本那列一起带出来）
+function renderList() {
+  const q = ($('adminSearch').value || '').trim().toLowerCase();
+  const list = q ? products.filter((p) => [p.name, p.name_en, p.brand, p.code, p.supplier].filter(Boolean).join(' ').toLowerCase().includes(q)) : products;
+  $('listCount').textContent = q ? `共 ${products.length} 件，搜到 ${list.length} 件` : `共 ${products.length} 件`;
+  $('list').innerHTML = list.length ? list.map((p) => `<tr>
     <td>${p.images && p.images[0] ? `<img src="${p.images[0]}">` : ''}</td>
     <td>${p.name}<br><small style="color:#888">${p.name_en || ''} · ${p.code}</small>${p.supplier ? `<br><small>商家：${p.supplier}</small>` : ''}${p.sourceUrl ? `<br><small><a href="${p.sourceUrl}" target="_blank" rel="noopener">商品链接 ↗</a></small>` : ''}</td>
     <td>${p.brand || ''} / ${CAT[p.category] || p.category}</td>
@@ -86,7 +94,7 @@ async function loadList() {
     <td>${p.sold != null ? p.sold + ' 件' : '—'}</td>
     <td>${p.published !== false ? '已上架' : '已下架'}</td>
     <td><button class="grey" data-edit="${p.id}">编辑</button> <button class="red" data-del="${p.id}">删除</button></td>
-  </tr>`).join('');
+  </tr>`).join('') : `<tr><td colspan="8" style="text-align:center;color:#888;padding:20px">没有找到 “${$('adminSearch').value}” 相关的商品</td></tr>`;
   document.querySelectorAll('[data-edit]').forEach((b) => b.onclick = () => openForm(products.find((p) => p.id === b.dataset.edit)));
   document.querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => {
     if (!confirm('确定删除这件商品吗？')) return;
@@ -94,6 +102,7 @@ async function loadList() {
     loadList(); loadStats();
   });
 }
+$('adminSearch').addEventListener('input', renderList);
 
 $('loginBtn').onclick = async () => {
   try {
