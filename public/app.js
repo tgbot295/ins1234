@@ -229,12 +229,14 @@ document.getElementById('drawerFilter').oninput = (e) => {
   const q = e.target.value.toLowerCase();
   document.querySelectorAll('#drawerCats button').forEach((b) => { b.style.display = b.textContent.toLowerCase().includes(q) ? '' : 'none'; });
 };
-// 点顶部 Search：直接跳到搜索框并聚焦键盘
+// 点顶部 Search：直接跳到搜索框并聚焦键盘（留出顶部导航栏的高度，搜索框不会被导航栏盖住）
 document.getElementById('searchBtn').onclick = () => {
   const bar = document.getElementById('searchBar');
   bar.classList.remove('hidden');
-  bar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  setTimeout(() => document.getElementById('searchInput').focus(), 300);
+  const topH = document.querySelector('.topbar').offsetHeight || 60;
+  const y = bar.getBoundingClientRect().top + window.scrollY - topH - 8;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+  setTimeout(() => document.getElementById('searchInput').focus({ preventScroll: true }), 350);
 };
 document.getElementById('searchClose').onclick = () => { document.getElementById('searchBar').classList.add('hidden'); query = ''; document.getElementById('searchInput').value = ''; render(); };
 // 输入搜索词后自动跳到商品区；回车也跳
