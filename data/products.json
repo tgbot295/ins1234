@@ -265,7 +265,13 @@
     "currency": "USD",
     "published": true,
     "images": [
-      "/images/M15.jpg"
+      "/images/M15.jpg",
+      "/images/M15-1.jpg",
+      "/images/M15-2.jpg",
+      "/images/M15-3.jpg",
+      "/images/M15-4.jpg",
+      "/images/M15-5.jpg",
+      "/images/M15-6.jpg"
     ],
     "costCny": 360,
     "supplier": "",
