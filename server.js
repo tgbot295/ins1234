@@ -77,19 +77,24 @@ const app = express();
 app.use(express.json({ limit: '1mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// ---------- 顾客端 API ----------
+// 顾客端 API：成本、商家联系方式、商品链接只在后台可见，前台一律去掉
+function publicProduct(p) {
+  const { costCny, supplier, sourceUrl, ...rest } = p;
+  if (Array.isArray(rest.variants)) rest.variants = rest.variants.map(({ costCny: _c, ...v }) => v);
+  return rest;
+}
 app.get('/api/config', (req, res) => {
-  res.json({ ok: true, storeName: config.storeName, whatsappNumber: config.whatsappNumber, whatsappDisplay: config.whatsappDisplay, defaultLang: config.defaultLang });
+  res.json({ ok: true, storeName: config.storeName, whatsappNumber: config.whatsappNumber, whatsappDisplay: config.whatsappDisplay, defaultLang: config.defaultLang, exchangeRate: config.exchangeRate || 7.2 });
 });
 
 // 只返回已上架的商品；价格字段原样返回，前端默认隐藏（没填价就不显示）
 app.get('/api/products', (req, res) => {
-  res.json({ ok: true, products: loadProducts().filter((p) => p.published !== false) });
+  res.json({ ok: true, products: loadProducts().filter((p) => p.published !== false).map(publicProduct) });
 });
 app.get('/api/products/:id', (req, res) => {
   const p = loadProducts().find((x) => String(x.id) === String(req.params.id) && x.published !== false);
   if (!p) return res.status(404).json({ ok: false, error: 'not found' });
-  res.json({ ok: true, product: p });
+  res.json({ ok: true, product: publicProduct(p) });
 });
 
 // ---------- 管理后台 API ----------
@@ -137,6 +142,9 @@ app.post('/api/admin/products', requireAdmin, (req, res) => {
     price: b.price === '' || b.price == null ? null : Number(b.price), // 美元，空 = 不填价
     currency: 'USD',
     published: b.published !== false,
+    costCny: b.costCny === '' || b.costCny == null ? null : Number(b.costCny), // 成本价人民币，仅后台可见
+    supplier: String(b.supplier || ''), // 商家联系方式，仅后台可见
+    sourceUrl: String(b.sourceUrl || ''), // 商品链接，仅后台可见
     images: Array.isArray(b.images) ? b.images.filter(Boolean) : []
   };
   list.push(item);
@@ -155,6 +163,9 @@ app.put('/api/admin/products/:id', requireAdmin, (req, res) => {
   if (b.brand != null) item.brand = String(b.brand);
   if (b.category != null) item.category = String(b.category);
   if (b.price !== undefined) item.price = (b.price === '' || b.price == null) ? null : Number(b.price);
+  if (b.costCny !== undefined) item.costCny = (b.costCny === '' || b.costCny == null) ? null : Number(b.costCny);
+  if (b.supplier !== undefined) item.supplier = String(b.supplier || '');
+  if (b.sourceUrl !== undefined) item.sourceUrl = String(b.sourceUrl || '');
   if (b.published !== undefined) item.published = !!b.published;
   if (Array.isArray(b.images)) item.images = b.images.filter(Boolean);
   saveProducts(list);

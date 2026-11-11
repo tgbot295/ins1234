@@ -2,8 +2,19 @@
 /* 管理后台逻辑：登录 -> 列表 -> 新增/编辑/删除 -> 多图上传 */
 let products = [];
 let editImages = [];
+let exchangeRate = 7.2;
 const $ = (id) => document.getElementById(id);
 const CAT = { bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰' };
+
+// 成本显示：¥ 人民币 + 按汇率换算的 $ 美元
+function costText(p) {
+  const costs = [p.costCny, ...((p.variants || []).map((v) => v.costCny))].filter((c) => c != null && c !== '');
+  if (!costs.length) return '—';
+  const lo = Math.min(...costs), hi = Math.max(...costs);
+  const yen = lo === hi ? '¥' + lo : '¥' + lo + '–' + hi;
+  const usd = (c) => '$' + (c / exchangeRate).toFixed(2);
+  return yen + '<br><small style="color:#888">' + (lo === hi ? usd(lo) : usd(lo) + '–' + usd(hi)) + '</small>';
+}
 
 async function api(path, opts) {
   const r = await fetch(path, opts);
@@ -29,6 +40,9 @@ function openForm(p) {
   $('fCode').value = p ? p.code : '';
   $('fCode').disabled = !!p; // 编号是唯一 ID，建好后不改
   $('fPrice').value = p && p.price != null ? p.price : '';
+  $('fCostCny').value = p && p.costCny != null ? p.costCny : '';
+  $('fSupplier').value = p ? (p.supplier || '') : '';
+  $('fSourceUrl').value = p ? (p.sourceUrl || '') : '';
   $('fPublished').checked = p ? p.published !== false : true;
   editImages = p ? [...(p.images || [])] : [];
   renderThumbs();
@@ -36,13 +50,15 @@ function openForm(p) {
 }
 
 async function loadList() {
+  try { const c = await api('/api/config'); if (c.exchangeRate) exchangeRate = c.exchangeRate; } catch (e) {}
   const j = await api('/api/admin/products');
   products = j.products || [];
   $('list').innerHTML = products.map((p) => `<tr>
     <td>${p.images && p.images[0] ? `<img src="${p.images[0]}">` : ''}</td>
-    <td>${p.name}<br><small style="color:#888">${p.name_en || ''} · ${p.code}</small></td>
+    <td>${p.name}<br><small style="color:#888">${p.name_en || ''} · ${p.code}</small>${p.supplier ? `<br><small>商家：${p.supplier}</small>` : ''}${p.sourceUrl ? `<br><small><a href="${p.sourceUrl}" target="_blank" rel="noopener">商品链接 ↗</a></small>` : ''}</td>
     <td>${p.brand || ''} / ${CAT[p.category] || p.category}</td>
     <td>${p.price != null ? '$' + p.price : '—'}</td>
+    <td>${costText(p)}</td>
     <td>${p.published !== false ? '已上架' : '已下架'}</td>
     <td><button class="grey" data-edit="${p.id}">编辑</button> <button class="red" data-del="${p.id}">删除</button></td>
   </tr>`).join('');
@@ -88,6 +104,9 @@ $('saveBtn').onclick = async () => {
     category: $('fCat').value,
     code: $('fCode').value.trim(),
     price: $('fPrice').value === '' ? null : Number($('fPrice').value),
+    costCny: $('fCostCny').value === '' ? null : Number($('fCostCny').value),
+    supplier: $('fSupplier').value.trim(),
+    sourceUrl: $('fSourceUrl').value.trim(),
     published: $('fPublished').checked,
     images: editImages
   };

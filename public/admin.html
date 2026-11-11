@@ -63,6 +63,11 @@ a{color:#25d366}
       <div><label>编号 Code *</label><input id="fCode" placeholder="如 1245088195"></div>
       <div><label>价格 USD（美元，留空 = 不显示）</label><input id="fPrice" type="number" min="0" step="0.01" placeholder="留空"></div>
     </div>
+    <div class="row">
+      <div><label>成本价 RMB（人民币，仅后台可见）</label><input id="fCostCny" type="number" min="0" step="0.01" placeholder="如 320"></div>
+      <div><label>商家联系方式（微信 / 电话，仅后台可见）</label><input id="fSupplier" placeholder="如 微信 xxx / 电话"></div>
+      <div><label>商品链接（仅后台可见）</label><input id="fSourceUrl" placeholder="https://gxhy1688.com/detailIndex?..."></div>
+    </div>
     <label><input type="checkbox" id="fPublished" checked style="width:auto"> 上架 Published（取消 = 前台看不到）</label>
     <label style="display:block;margin-top:10px">商品图片（可多选：正面 / 侧面 / 细节）</label>
     <input id="fFiles" type="file" accept="image/*" multiple>
@@ -75,7 +80,7 @@ a{color:#25d366}
   </div>
 
   <table style="margin-top:18px">
-    <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>状态</th><th>操作</th></tr></thead>
+    <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>成本</th><th>状态</th><th>操作</th></tr></thead>
     <tbody id="list"></tbody>
   </table>
 </div>
