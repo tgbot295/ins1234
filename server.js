@@ -19,6 +19,7 @@ const config = require('./config');
 
 const PORT = parseInt(process.env.PORT || '3000', 10);
 const HOST = process.env.HOST || '0.0.0.0'; // 宝塔反向代理走 127.0.0.1:3000，0.0.0.0 包含它
+const ADMIN_USER = process.env.ADMIN_USER || 'admin01'; // 管理员账号（也可以在 .env 里用 ADMIN_USER 改）
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '968574'; // 管理员密码（也可以在 .env 里用 ADMIN_PASSWORD 改）
 
 const DATA_FILE = path.join(__dirname, 'data', 'products.json');
@@ -147,7 +148,7 @@ app.get('/api/products/:id', (req, res) => {
 // ---------- 管理后台 API ----------
 // 登录
 app.post('/api/admin/login', (req, res) => {
-  if (!req.body || req.body.password !== ADMIN_PASSWORD) {
+  if (!req.body || req.body.username !== ADMIN_USER || req.body.password !== ADMIN_PASSWORD) {
     return res.status(401).json({ ok: false, error: '密码错误' });
   }
   adminToken = crypto.randomBytes(24).toString('hex');

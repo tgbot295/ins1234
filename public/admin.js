@@ -106,7 +106,7 @@ $('adminSearch').addEventListener('input', renderList);
 
 $('loginBtn').onclick = async () => {
   try {
-    await api('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: $('pw').value }) });
+    await api('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: $('username').value.trim(), password: $('pw').value }) });
     $('loginBox').classList.add('hidden');
     $('adminBox').classList.remove('hidden');
     loadList(); loadStats();
