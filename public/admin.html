@@ -28,6 +28,25 @@ td img{width:56px;height:56px;object-fit:cover;border-radius:6px}
 .thumbs span{position:absolute;top:-6px;right:-6px;background:#e5484d;color:#fff;border-radius:50%;width:20px;height:20px;text-align:center;line-height:20px;cursor:pointer;font-size:12px}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 a{color:#25d366}
+.admin-layout{display:flex;max-width:1200px;padding:0;overflow:hidden}
+.sidebar{width:210px;flex:none;background:#1a1a1a;color:#fff;padding:22px 14px;display:flex;flex-direction:column;align-items:center}
+.sidebar img.side-logo{width:64px;height:64px;border-radius:50%;border:3px solid #d4af37;object-fit:cover}
+.sidebar .side-name{font-size:16px;font-weight:700;margin-top:10px}
+.sidebar .side-sub{font-size:12px;color:#999;letter-spacing:2px;margin:2px 0 20px}
+.sidebar nav{width:100%;display:flex;flex-direction:column;gap:6px}
+.nav-btn{display:block;width:100%;text-align:left;background:transparent;color:#ddd;border:none;border-radius:8px;padding:11px 14px;cursor:pointer;font-size:14px;text-decoration:none}
+.nav-btn:hover{background:#2a2a2a;color:#fff}
+.nav-btn.active{background:#25d366;color:#fff;font-weight:700}
+.admin-main{flex:1;min-width:0;padding:20px;overflow-x:auto}
+@media (max-width:700px){
+  .admin-layout{flex-direction:column}
+  .sidebar{width:100%;padding:14px;flex-direction:row;flex-wrap:wrap;gap:10px;align-items:center}
+  .sidebar img.side-logo{width:44px;height:44px}
+  .sidebar .side-name{margin:0}
+  .sidebar .side-sub{display:none}
+  .sidebar nav{flex-direction:row;flex-wrap:wrap}
+  .nav-btn{width:auto}
+}
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
 .login-card{width:100%;max-width:380px;background:#fff;border-radius:16px;padding:36px 32px 30px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.08)}
 .login-card img.logo{width:84px;height:84px;border-radius:50%;border:3px solid #d4af37;object-fit:cover;margin-bottom:14px}
@@ -54,23 +73,22 @@ a{color:#25d366}
   </div>
 </div>
 
-<div class="box hidden" id="adminBox">
-  <div class="topbar">
+<div class="box hidden admin-layout" id="adminBox">
+  <aside class="sidebar">
+    <img class="side-logo" src="/images/logo.png" alt="MM Luxe Shop">
+    <div class="side-name">MM Luxe Shop</div>
+    <div class="side-sub">管理后台 ADMIN</div>
+    <nav>
+      <button id="navProducts" class="nav-btn active" type="button">📦 商品管理</button>
+      <button id="navStats" class="nav-btn" type="button">📊 访问统计</button>
+      <button id="navNew" class="nav-btn" type="button">＋ 新增商品</button>
+      <a href="/" target="_blank" class="nav-btn">🛍 查看前台</a>
+      <button id="logoutBtn" class="nav-btn" type="button">🚪 退出登录</button>
+    </nav>
+  </aside>
+  <main class="admin-main">
+  <div id="viewProducts">
     <div><h1>商品管理</h1><p class="sub">Products — 上传图片 / 上架 / 改价（美元 USD，留空 = 前台不显示价格）</p></div>
-    <div>
-      <a href="/" target="_blank">查看前台 ↗</a> &nbsp;
-      <button id="logoutBtn" class="grey">退出</button>
-    </div>
-  </div>
-
-  <div id="statsBox" style="margin:16px 0;border:1px solid #eee;border-radius:10px;padding:12px 16px">
-    <h2 id="statsToggle" style="font-size:17px;cursor:pointer;user-select:none">访问统计 <span id="statsArrow" style="color:#888;font-size:13px">▶ 展开</span></h2>
-    <div id="statsBody" class="hidden">
-    <div class="row" id="statsCards" style="margin-top:10px"></div>
-    <div id="statsChart" style="margin-top:12px"></div>
-    <div id="statsTop" style="margin-top:12px;font-size:13px"></div>
-    </div>
-  </div>
 
   <button id="newBtn" class="green">+ 新增商品 Add Product</button>
   <div style="margin:14px 0 8px;display:flex;gap:8px;align-items:center">
@@ -111,6 +129,19 @@ a{color:#25d366}
     <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>成本</th><th>已售</th><th>状态</th><th>操作</th></tr></thead>
     <tbody id="list"></tbody>
   </table>
+  </div>
+  <div id="viewStats" class="hidden">
+    <div><h1>访问统计</h1><p class="sub">每天多少人点进网站、看了哪些商品</p></div>
+    <div id="statsBox" style="margin:16px 0;border:1px solid #eee;border-radius:10px;padding:12px 16px">
+      <h2 id="statsToggle" style="font-size:17px;cursor:pointer;user-select:none">访问统计 <span id="statsArrow" style="color:#888;font-size:13px">▶ 展开</span></h2>
+      <div id="statsBody" class="hidden">
+      <div class="row" id="statsCards" style="margin-top:10px"></div>
+      <div id="statsChart" style="margin-top:12px"></div>
+      <div id="statsTop" style="margin-top:12px;font-size:13px"></div>
+      </div>
+    </div>
+  </div>
+  </main>
 </div>
 
 <script src="/admin.js"></script>

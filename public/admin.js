@@ -104,6 +104,18 @@ function renderList() {
 }
 $('adminSearch').addEventListener('input', renderList);
 
+// 左侧菜单导航：商品管理 / 访问统计 切换，新增商品直接打开表单
+function showView(v) {
+  $('viewProducts').classList.toggle('hidden', v !== 'products');
+  $('viewStats').classList.toggle('hidden', v !== 'stats');
+  $('navProducts').classList.toggle('active', v === 'products');
+  $('navStats').classList.toggle('active', v === 'stats');
+  if (v === 'stats') { $('statsBody').classList.remove('hidden'); $('statsArrow').textContent = '▼ 收起'; }
+}
+$('navProducts').onclick = () => showView('products');
+$('navStats').onclick = () => { showView('stats'); loadStats(); };
+$('navNew').onclick = () => { showView('products'); openForm(null); };
+
 $('loginBtn').onclick = async () => {
   try {
     await api('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: $('username').value.trim(), password: $('pw').value }) });
