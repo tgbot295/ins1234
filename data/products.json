@@ -1081,5 +1081,95 @@
     "supplier": "",
     "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852805",
     "sold": 86
+  },
+  {
+    "id": "M64",
+    "code": "M64",
+    "name": "香奈儿磨砂嬉皮腋下包",
+    "name_en": "Chanel Suede Drawstring Bucket Bag",
+    "brand": "Chanel",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M64.jpg"
+    ],
+    "costCny": 160,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515020",
+    "sold": 0
+  },
+  {
+    "id": "M65",
+    "code": "M65",
+    "name": "香奈儿26a高级手工坊三角tote包",
+    "name_en": "Chanel Triangle Tote",
+    "brand": "Chanel",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M65.jpg"
+    ],
+    "costCny": 150,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515025",
+    "sold": 0
+  },
+  {
+    "id": "M66",
+    "code": "M66",
+    "name": "小香风22 Bag链条大容量包包",
+    "name_en": "Chanel 22 Bag",
+    "brand": "Chanel",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M66.jpg"
+    ],
+    "costCny": 1041,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456182",
+    "sold": 92
+  },
+  {
+    "id": "M67",
+    "code": "M67",
+    "name": "小香风银色菱格链条化妆包",
+    "name_en": "Chanel Silver Quilted Vanity Bag",
+    "brand": "Chanel",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M67.jpg"
+    ],
+    "costCny": 1687,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456175",
+    "sold": 0
+  },
+  {
+    "id": "M68",
+    "code": "M68",
+    "name": "小金球菱格链条小方包",
+    "name_en": "Chanel Classic Flap Mini",
+    "brand": "Chanel",
+    "category": "bags",
+    "price": null,
+    "currency": "USD",
+    "published": true,
+    "images": [
+      "/images/M68.jpg"
+    ],
+    "costCny": 866,
+    "supplier": "",
+    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456087",
+    "sold": 16
   }
 ]
