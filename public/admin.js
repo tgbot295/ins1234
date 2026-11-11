@@ -66,6 +66,13 @@ async function loadStats() {
   } catch (e) { $('statsBox').innerHTML = '<p style="color:#888">统计加载失败：' + e.message + '</p>'; }
 }
 
+// 统计默认收起，点标题展开 / 收起
+$('statsToggle').onclick = () => {
+  const body = $('statsBody');
+  const open = body.classList.toggle('hidden') === false;
+  $('statsArrow').textContent = open ? '▼ 收起' : '▶ 展开';
+};
+
 async function loadList() {
   try { const c = await api('/api/config'); if (c.exchangeRate) exchangeRate = c.exchangeRate; } catch (e) {}
   const j = await api('/api/admin/products');
