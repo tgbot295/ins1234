@@ -3,7 +3,7 @@
 let products = [];
 let editImages = [];
 const $ = (id) => document.getElementById(id);
-const CAT = { bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰' };
+const CAT = { bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰' };
 
 async function api(path, opts) {
   const r = await fetch(path, opts);

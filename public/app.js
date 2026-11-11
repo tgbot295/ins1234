@@ -9,8 +9,8 @@ let query = '';
 let galImgs = [], galIdx = 0;
 
 const I18N = {
-  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', viewDetails: 'View Details', code: 'Code', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
-  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', viewDetails: '看详情', code: '编号', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
+  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
+  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
 };
 const t = (k) => (I18N[lang] && I18N[lang][k]) || I18N.en[k] || k;
 const dispName = (p) => lang === 'zh' ? p.name : (p.name_en || p.name);
@@ -79,7 +79,7 @@ function render() {
   const clearBtn = document.getElementById('clearBrand');
   if (clearBtn) clearBtn.style.display = activeBrand ? '' : 'none';
   // 分类抽屉
-  const cats = ['all', 'bags', 'clothing', 'shoes', 'accessories'];
+  const cats = ['all', 'bags', 'clothing', 'shoes', 'accessories', 'jewelry'];
   document.getElementById('drawerCats').innerHTML = cats.map((c) =>
     `<button data-cat="${c}" class="${activeCat === c ? 'active' : ''}">${catLabel(c)}</button>`).join('');
   document.querySelectorAll('#drawerCats button').forEach((b) => b.onclick = () => { activeCat = b.dataset.cat; closeDrawer(); render(); });
@@ -87,7 +87,7 @@ function render() {
   const list = filtered();
   const wrap = document.getElementById('brandSections');
   if (!list.length) { wrap.innerHTML = `<p style="text-align:center;padding:30px">${t('noResult')}</p>`; return; }
-  const order = ['bags', 'clothing', 'shoes', 'accessories'];
+  const order = ['bags', 'clothing', 'shoes', 'accessories', 'jewelry'];
   wrap.innerHTML = order.filter((c) => list.some((p) => p.category === c)).map((c) => `
     <section class="brand-section"><h2>${catLabel(c)}</h2><div class="grid">
       ${list.filter((p) => p.category === c).map((p) => `
