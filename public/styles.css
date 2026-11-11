@@ -56,5 +56,11 @@ footer a{color:#25d366}
 @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:20px}.store-logo{height:40px;width:40px}.top-btn span{display:none}}
 .price{font-weight:700;margin:4px 0}
 .d-price{font-weight:700;font-size:18px;margin:6px 0}
-.store-logo{height:64px;width:64px;vertical-align:middle;margin-right:12px;border-radius:8px;object-fit:cover;border:2px solid #c9a24b}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1280px;margin:16px auto 0;padding:0 16px}
+.feature{background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.feature b{display:block;font-size:15px;margin:6px 0 2px}
+.feature span{font-size:13px;color:#888}
+.f-ico{font-size:26px}
+@media(max-width:900px){.features{grid-template-columns:repeat(2,1fr)}}
+.store-logo{height:64px;width:64px;vertical-align:middle;margin-right:12px;border-radius:50%;object-fit:cover;border:2px solid #c9a24b}
 .banner img{width:100%;height:300px;object-fit:cover}
