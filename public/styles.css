@@ -4,7 +4,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .hidden{display:none!important}
 .topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #eee;padding:10px 16px}
 .top-left,.top-right{display:flex;gap:8px;align-items:center}
-.store-name{font-weight:700;font-size:20px;letter-spacing:1px}
+.store-name{font-weight:800;font-size:28px;letter-spacing:1px;display:flex;align-items:center}
 .top-btn,.lang-btn{border:1px solid #ddd;background:#fff;border-radius:20px;padding:6px 12px;cursor:pointer;font-size:14px}
 .lang-btn{background:#111;color:#fff;border-color:#111}
 .wa-btn{display:inline-block;background:#25d366;color:#fff;text-decoration:none;border-radius:20px;padding:7px 14px;font-size:14px;font-weight:600}
@@ -24,9 +24,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .banner img{width:100%;height:340px;object-fit:cover;display:block}
 .banner-text{position:absolute;left:24px;bottom:24px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .banner-text h1{font-size:28px}
-main{max-width:1200px;margin:0 auto;padding:8px 16px 32px}
-.brand-section h2{text-align:center;margin:28px 0 16px;font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+main{max-width:1280px;margin:0 auto;padding:4px 16px 24px}
+.brand-section h2{text-align:center;margin:18px 0 12px;font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .card{cursor:pointer}
 .card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;background:#f4f4f4}
 .card .name{text-align:center;font-size:13px;margin-top:6px;line-height:1.4}
@@ -53,8 +53,8 @@ footer a{color:#25d366}
 .d-meta{color:#888;font-size:13px;margin:6px 0 14px}
 .d-actions{display:flex;gap:10px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}.banner img{height:220px}}
-@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:16px}.top-btn span{display:none}}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}.store-name{font-size:20px}.store-logo{height:40px;width:40px}.top-btn span{display:none}}
 .price{font-weight:700;margin:4px 0}
 .d-price{font-weight:700;font-size:18px;margin:6px 0}
-.store-logo{height:34px;width:auto;vertical-align:middle;margin-right:8px;border-radius:50%}
-.banner img{width:100%;height:320px;object-fit:cover}
+.store-logo{height:54px;width:54px;vertical-align:middle;margin-right:10px;border-radius:50%;object-fit:cover}
+.banner img{width:100%;height:280px;object-fit:cover}
