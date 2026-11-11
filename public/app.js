@@ -174,8 +174,7 @@ document.getElementById('shIg').onclick = async () => {
   if (isMobile) location.href = 'instagram://share?text=' + encodeURIComponent(text + ' ' + url);
   else {
     try { await navigator.clipboard.writeText(text + '\n' + url); } catch (e) {}
-    const a = document.createElement('a'); a.href = url; a.download = (p.code || 'product') + '.jpg'; a.click();
-    alert('商品信息已复制，图片已下载。IG 网页版私信已打开，粘贴文字、上传图片就能发给我们');
+    alert('商品信息已复制。IG 网页版私信已打开，粘贴就能发给我们');
     window.open('https://www.instagram.com/direct/inbox/', '_blank');
   }
   closeShare();
