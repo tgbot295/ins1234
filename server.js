@@ -41,6 +41,45 @@ function saveProducts(list) {
   fs.renameSync(tmp, DATA_FILE);
 }
 
+// ---------- 访问统计：每天多少人看网站 + 每个商品被看了多少次（存 data/stats.json） ----------
+const STATS_FILE = path.join(__dirname, 'data', 'stats.json');
+function loadStats() {
+  try {
+    const s = JSON.parse(fs.readFileSync(STATS_FILE, 'utf-8'));
+    return { days: s.days || {}, productViews: s.productViews || {} };
+  } catch (e) {
+    return { days: {}, productViews: {} };
+  }
+}
+function saveStats(s) {
+  // 只留最近 60 天，IP 只存哈希、每天清掉旧的
+  const keys = Object.keys(s.days).sort().slice(-60);
+  const days = {};
+  for (const k of keys) days[k] = s.days[k];
+  const tmp = STATS_FILE + '.tmp';
+  fs.writeFileSync(tmp, JSON.stringify({ days, productViews: s.productViews }, null, 2), 'utf-8');
+  fs.renameSync(tmp, STATS_FILE);
+}
+function todayStr(d) { return (d || new Date()).toISOString().slice(0, 10); }
+function trackVisit(req) {
+  try {
+    const s = loadStats();
+    const day = todayStr();
+    const ipHash = crypto.createHash('sha256').update(req.ip || req.socket.remoteAddress || '').digest('hex').slice(0, 16);
+    if (!s.days[day]) s.days[day] = { views: 0, ips: [] };
+    s.days[day].views += 1;
+    if (!s.days[day].ips.includes(ipHash)) s.days[day].ips.push(ipHash);
+    saveStats(s);
+  } catch (e) { /* 统计失败不影响正常访问 */ }
+}
+function trackProductView(id) {
+  try {
+    const s = loadStats();
+    s.productViews[String(id)] = (s.productViews[String(id)] || 0) + 1;
+    saveStats(s);
+  } catch (e) {}
+}
+
 // ---------- 管理员登录：一次登录发一个随机 token（存 cookie） ----------
 let adminToken = null;
 function parseCookies(req) {
@@ -75,7 +114,15 @@ const upload = multer({
 
 const app = express();
 app.use(express.json({ limit: '1mb' }));
+// 首页每次打开记一次访问（放 static 之前，不然首页会被静态文件直接接走不计数）
+app.use((req, res, next) => { if (req.method === 'GET' && req.path === '/') trackVisit(req); next(); });
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 商品详情被打开记一次（前台调用）
+app.post('/api/track/view', (req, res) => {
+  if (req.body && req.body.id) trackProductView(req.body.id);
+  res.json({ ok: true });
+});
 
 // 顾客端 API：成本、商家联系方式、商品链接只在后台可见，前台一律去掉
 function publicProduct(p) {
@@ -119,6 +166,24 @@ app.get('/api/admin/products', requireAdmin, (req, res) => {
   res.json({ ok: true, products: loadProducts() });
 });
 
+// 访问统计（仅后台）：今日/总访问、最近 30 天每天多少人、商品被看次数排行
+app.get('/api/admin/stats', requireAdmin, (req, res) => {
+  const s = loadStats();
+  const dates = [];
+  for (let i = 29; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+    const rec = s.days[d] || { views: 0, ips: [] };
+    dates.push({ date: d, views: rec.views, unique: (rec.ips || []).length });
+  }
+  const total = Object.values(s.days).reduce((a, d) => a + (d.views || 0), 0);
+  const today = s.days[todayStr()] || { views: 0, ips: [] };
+  const products = loadProducts();
+  const top = Object.entries(s.productViews)
+    .map(([id, views]) => ({ id, views, name: (products.find((p) => String(p.id) === id) || {}).name || id }))
+    .sort((a, b) => b.views - a.views).slice(0, 10);
+  res.json({ ok: true, today: { views: today.views, unique: (today.ips || []).length }, total, last30: dates, topProducts: top });
+});
+
 // 上传图片（多张）：表单字段名 images
 app.post('/api/admin/upload', requireAdmin, upload.array('images', 10), (req, res) => {
   const urls = (req.files || []).map((f) => '/uploads/' + f.filename);
@@ -145,6 +210,7 @@ app.post('/api/admin/products', requireAdmin, (req, res) => {
     costCny: b.costCny === '' || b.costCny == null ? null : Number(b.costCny), // 成本价人民币，仅后台可见
     supplier: String(b.supplier || ''), // 商家联系方式，仅后台可见
     sourceUrl: String(b.sourceUrl || ''), // 商品链接，仅后台可见
+    sold: b.sold === '' || b.sold == null ? Math.floor(12 + Math.random() * 140) : Number(b.sold), // 已售件数，前台显示
     images: Array.isArray(b.images) ? b.images.filter(Boolean) : []
   };
   list.push(item);
@@ -166,6 +232,7 @@ app.put('/api/admin/products/:id', requireAdmin, (req, res) => {
   if (b.costCny !== undefined) item.costCny = (b.costCny === '' || b.costCny == null) ? null : Number(b.costCny);
   if (b.supplier !== undefined) item.supplier = String(b.supplier || '');
   if (b.sourceUrl !== undefined) item.sourceUrl = String(b.sourceUrl || '');
+  if (b.sold !== undefined) item.sold = (b.sold === '' || b.sold == null) ? 0 : Number(b.sold);
   if (b.published !== undefined) item.published = !!b.published;
   if (Array.isArray(b.images)) item.images = b.images.filter(Boolean);
   saveProducts(list);

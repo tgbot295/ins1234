@@ -9,11 +9,12 @@ let query = '';
 let galImgs = [], galIdx = 0;
 
 const I18N = {
-  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', color: 'Color', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
-  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', color: '颜色', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
+  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', color: 'Color', sold: 'sold', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands' },
+  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', color: '颜色', sold: '已售', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌' }
 };
 const t = (k) => (I18N[lang] && I18N[lang][k]) || I18N.en[k] || k;
 const dispName = (p) => lang === 'zh' ? p.name : (p.name_en || p.name);
+const soldText = (p) => (p.sold != null && p.sold !== '') ? (lang === 'zh' ? `已售 ${p.sold} 件` : `${p.sold} sold`) : '';
 const catLabel = (c) => c === 'all' ? t('all') : t(c) || c;
 
 // 同款多色：一个商品 + variants[{color,color_en,code,image}]；详情里点颜色切换，翻页一样
@@ -103,6 +104,7 @@ function render() {
           <button class="share-btn" title="Share" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></button>
           <img src="${p.images[0] || ''}" alt="" loading="lazy">
           <div class="name">${dispName(p)}</div>
+          ${soldText(p) ? `<div class="sold">${soldText(p)}</div>` : ''}
           ${p.variants && p.variants.length > 1 ? `<div class="var-colors">${p.variants.map((v) => varLabel(v)).join(' · ')}</div>` : ''}
           ${p.price != null && p.price !== '' ? `<div class="price">$${p.price}</div>` : ''}
           <div class="actions">
@@ -128,11 +130,13 @@ function openDetail(p) {
   document.getElementById('dName').textContent = dispName(p);
   document.getElementById('dBrand').textContent = p.brand;
   document.getElementById('dCode').textContent = p.code;
+  document.getElementById('dSold').textContent = soldText(p);
   document.getElementById('dPrice').textContent = p.price != null && p.price !== '' ? '$' + p.price : '';
   document.getElementById('dWa').href = waLink(p);
   renderVariants(p);
   showGal();
   document.getElementById('detailModal').classList.remove('hidden');
+  fetch('/api/track/view', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: p.id }) }).catch(() => {});
 }
 function renderVariants(p) {
   const box = document.getElementById('dVariants');

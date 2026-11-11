@@ -49,6 +49,13 @@ a{color:#25d366}
     </div>
   </div>
 
+  <div id="statsBox" style="margin:16px 0;border:1px solid #eee;border-radius:10px;padding:16px">
+    <h2 style="font-size:17px;margin-bottom:10px">访问统计</h2>
+    <div class="row" id="statsCards"></div>
+    <div id="statsChart" style="margin-top:12px"></div>
+    <div id="statsTop" style="margin-top:12px;font-size:13px"></div>
+  </div>
+
   <button id="newBtn" class="green">+ 新增商品 Add Product</button>
   <div id="formBox" class="hidden" style="margin-top:16px;border:1px solid #eee;border-radius:10px;padding:16px">
     <h2 id="formTitle" style="font-size:17px;margin-bottom:10px">新增商品</h2>
@@ -62,6 +69,7 @@ a{color:#25d366}
       <div><label>分类 Category</label><select id="fCat"><option value="bags">包包 Bags</option><option value="clothing">衣服 Clothing</option><option value="shoes">鞋子 Shoes</option><option value="accessories">配饰 Accessories</option><option value="jewelry">首饰 Jewelry</option></select></div>
       <div><label>编号 Code *</label><input id="fCode" placeholder="如 1245088195"></div>
       <div><label>价格 USD（美元，留空 = 不显示）</label><input id="fPrice" type="number" min="0" step="0.01" placeholder="留空"></div>
+      <div><label>已售件数（前台显示，可改）</label><input id="fSold" type="number" min="0" step="1" placeholder="留空 = 随机"></div>
     </div>
     <div class="row">
       <div><label>成本价 RMB（人民币，仅后台可见）</label><input id="fCostCny" type="number" min="0" step="0.01" placeholder="如 320"></div>
@@ -80,7 +88,7 @@ a{color:#25d366}
   </div>
 
   <table style="margin-top:18px">
-    <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>成本</th><th>状态</th><th>操作</th></tr></thead>
+    <thead><tr><th>图片</th><th>商品</th><th>品牌 / 分类</th><th>价格</th><th>成本</th><th>已售</th><th>状态</th><th>操作</th></tr></thead>
     <tbody id="list"></tbody>
   </table>
 </div>

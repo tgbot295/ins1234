@@ -40,6 +40,7 @@ function openForm(p) {
   $('fCode').value = p ? p.code : '';
   $('fCode').disabled = !!p; // 编号是唯一 ID，建好后不改
   $('fPrice').value = p && p.price != null ? p.price : '';
+  $('fSold').value = p && p.sold != null ? p.sold : '';
   $('fCostCny').value = p && p.costCny != null ? p.costCny : '';
   $('fSupplier').value = p ? (p.supplier || '') : '';
   $('fSourceUrl').value = p ? (p.sourceUrl || '') : '';
@@ -47,6 +48,22 @@ function openForm(p) {
   editImages = p ? [...(p.images || [])] : [];
   renderThumbs();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function loadStats() {
+  try {
+    const s = await api('/api/admin/stats');
+    const last7 = s.last30.slice(-7);
+    const w7 = last7.reduce((a, d) => a + d.views, 0);
+    const max = Math.max(1, ...s.last30.map((d) => d.views));
+    $('statsCards').innerHTML = `
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">今日访问</div><div style="font-size:22px;font-weight:700">${s.today.views} 次 · ${s.today.unique} 人</div></div>
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">近 7 天访问</div><div style="font-size:22px;font-weight:700">${w7} 次</div></div>
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">累计访问</div><div style="font-size:22px;font-weight:700">${s.total} 次</div></div>`;
+    $('statsChart').innerHTML = '<div style="font-size:13px;color:#555;margin-bottom:6px">最近 30 天每天访问（次）</div>' +
+      s.last30.map((d) => `<div style="display:flex;align-items:center;gap:8px;font-size:12px;margin:2px 0"><span style="width:86px;color:#888">${d.date.slice(5)}</span><span style="display:inline-block;height:12px;background:#25d366;border-radius:6px;width:${Math.max(2, Math.round(d.views / max * 100))}%"></span><span>${d.views}</span></div>`).join('');
+    $('statsTop').innerHTML = s.topProducts.length ? '<b>被看最多的商品：</b><br>' + s.topProducts.map((t, i) => `${i + 1}. ${t.name} — ${t.views} 次`).join('<br>') : '还没有商品被点开看过。';
+  } catch (e) { $('statsBox').innerHTML = '<p style="color:#888">统计加载失败：' + e.message + '</p>'; }
 }
 
 async function loadList() {
@@ -59,6 +76,7 @@ async function loadList() {
     <td>${p.brand || ''} / ${CAT[p.category] || p.category}</td>
     <td>${p.price != null ? '$' + p.price : '—'}</td>
     <td>${costText(p)}</td>
+    <td>${p.sold != null ? p.sold + ' 件' : '—'}</td>
     <td>${p.published !== false ? '已上架' : '已下架'}</td>
     <td><button class="grey" data-edit="${p.id}">编辑</button> <button class="red" data-del="${p.id}">删除</button></td>
   </tr>`).join('');
@@ -66,7 +84,7 @@ async function loadList() {
   document.querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => {
     if (!confirm('确定删除这件商品吗？')) return;
     await api('/api/admin/products/' + encodeURIComponent(b.dataset.del), { method: 'DELETE' });
-    loadList();
+    loadList(); loadStats();
   });
 }
 
@@ -75,7 +93,7 @@ $('loginBtn').onclick = async () => {
     await api('/api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: $('pw').value }) });
     $('loginBox').classList.add('hidden');
     $('adminBox').classList.remove('hidden');
-    loadList();
+    loadList(); loadStats();
   } catch (e) { $('loginErr').textContent = e.message; }
 };
 $('pw').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('loginBtn').click(); });
@@ -104,6 +122,7 @@ $('saveBtn').onclick = async () => {
     category: $('fCat').value,
     code: $('fCode').value.trim(),
     price: $('fPrice').value === '' ? null : Number($('fPrice').value),
+    sold: $('fSold').value === '' ? null : Number($('fSold').value),
     costCny: $('fCostCny').value === '' ? null : Number($('fCostCny').value),
     supplier: $('fSupplier').value.trim(),
     sourceUrl: $('fSourceUrl').value.trim(),
@@ -116,11 +135,11 @@ $('saveBtn').onclick = async () => {
     if (id) await api('/api/admin/products/' + encodeURIComponent(id), { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     else await api('/api/admin/products', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     $('formBox').classList.add('hidden');
-    loadList();
+    loadList(); loadStats();
   } catch (e) { alert(e.message); }
 };
 
 // 已登录过直接进后台
 (async () => {
-  try { await api('/api/admin/me'); $('loginBox').classList.add('hidden'); $('adminBox').classList.remove('hidden'); loadList(); } catch (e) {}
+  try { await api("/api/admin/me"); $("loginBox").classList.add("hidden"); $("adminBox").classList.remove("hidden"); loadList(); loadStats(); } catch (e) {}
 })();
