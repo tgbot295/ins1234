@@ -104,16 +104,76 @@ function renderList() {
 }
 $('adminSearch').addEventListener('input', renderList);
 
+// 广告记账：汇总（按币种分开算）+ 明细表
+let adEntries = [];
+function money(v, cur) { return (cur === 'CNY' ? '¥' : '$') + Number(v).toFixed(2); }
+function renderAds() {
+  const byCur = {};
+  for (const e of adEntries) {
+    byCur[e.currency] = byCur[e.currency] || { recharge: 0, spend: 0 };
+    byCur[e.currency][e.type === 'recharge' ? 'recharge' : 'spend'] += Number(e.amount) || 0;
+  }
+  const curs = Object.keys(byCur).sort((a, b) => (a === 'USD' ? -1 : 1));
+  $('adSummary').innerHTML = curs.length ? curs.map((c) => {
+    const t = byCur[c];
+    return `
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">充值总额（${c}）</div><div style="font-size:22px;font-weight:700;color:#25d366">+${money(t.recharge, c)}</div></div>
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">花费总额（${c}）</div><div style="font-size:22px;font-weight:700;color:#e5484d">−${money(t.spend, c)}</div></div>
+      <div style="background:#f7f3ee;border-radius:10px;padding:12px"><div style="font-size:12px;color:#888">剩余余额（${c}）</div><div style="font-size:22px;font-weight:700">${money(t.recharge - t.spend, c)}</div></div>`;
+  }).join('') : '<div style="color:#888">还没有记账，先在下面记一笔。</div>';
+  const rows = [...adEntries].sort((a, b) => (b.date + b.id).localeCompare(a.date + a.id));
+  $('adList').innerHTML = rows.length ? rows.map((e) => `<tr>
+    <td>${e.date}</td>
+    <td>${e.platform || ''}</td>
+    <td style="color:${e.type === 'recharge' ? '#25d366' : '#e5484d'};font-weight:700">${e.type === 'recharge' ? '充值 +' : '花费 −'}</td>
+    <td>${money(e.amount, e.currency)}</td>
+    <td>${e.note || ''}</td>
+    <td><button class="red" data-ad-del="${e.id}">删除</button></td>
+  </tr>`).join('') : `<tr><td colspan="6" style="text-align:center;color:#888;padding:20px">还没有记账记录</td></tr>`;
+  document.querySelectorAll('[data-ad-del]').forEach((b) => b.onclick = async () => {
+    if (!confirm('确定删除这笔记账吗？')) return;
+    await api('/api/admin/ad-spend/' + encodeURIComponent(b.dataset.adDel), { method: 'DELETE' });
+    loadAds();
+  });
+}
+async function loadAds() {
+  try {
+    const j = await api('/api/admin/ad-spend');
+    adEntries = j.entries || [];
+    renderAds();
+  } catch (e) { $('adList').innerHTML = `<tr><td colspan="6" style="color:#888">记账加载失败：${e.message}</td></tr>`; }
+}
+$('adSaveBtn').onclick = async () => {
+  const body = {
+    date: $('adDate').value,
+    platform: $('adPlatform').value.trim() || 'Meta',
+    type: $('adType').value,
+    amount: $('adAmount').value === '' ? null : Number($('adAmount').value),
+    currency: $('adCurrency').value,
+    note: $('adNote').value.trim()
+  };
+  if (!body.date || !body.amount || !(body.amount > 0)) { alert('日期和金额必填，金额要大于 0'); return; }
+  try {
+    await api('/api/admin/ad-spend', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    $('adAmount').value = ''; $('adNote').value = '';
+    loadAds();
+  } catch (e) { alert(e.message); }
+};
+
 // 左侧菜单导航：商品管理 / 访问统计 切换，新增商品直接打开表单
 function showView(v) {
   $('viewProducts').classList.toggle('hidden', v !== 'products');
   $('viewStats').classList.toggle('hidden', v !== 'stats');
+  $('viewAds').classList.toggle('hidden', v !== 'ads');
   $('navProducts').classList.toggle('active', v === 'products');
   $('navStats').classList.toggle('active', v === 'stats');
+  $('navAds').classList.toggle('active', v === 'ads');
   if (v === 'stats') { $('statsBody').classList.remove('hidden'); $('statsArrow').textContent = '▼ 收起'; }
+  if (v === 'ads') { $('adDate').value = new Date().toISOString().slice(0, 10); }
 }
 $('navProducts').onclick = () => showView('products');
 $('navStats').onclick = () => { showView('stats'); loadStats(); };
+$('navAds').onclick = () => { showView('ads'); loadAds(); };
 $('navNew').onclick = () => { showView('products'); openForm(null); };
 
 $('loginBtn').onclick = async () => {

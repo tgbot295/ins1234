@@ -7,3 +7,6 @@ public/uploads/*
 
 # 访问统计是服务器本地数据，不进仓库
 data/stats.json
+
+# 广告费用记账是财务数据，不进仓库
+data/ad_spend.json

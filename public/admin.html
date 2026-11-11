@@ -81,6 +81,7 @@ a{color:#25d366}
     <nav>
       <button id="navProducts" class="nav-btn active" type="button">📦 商品管理</button>
       <button id="navStats" class="nav-btn" type="button">📊 访问统计</button>
+      <button id="navAds" class="nav-btn" type="button">💰 广告记账</button>
       <button id="navNew" class="nav-btn" type="button">＋ 新增商品</button>
       <a href="/" target="_blank" class="nav-btn">🛍 查看前台</a>
       <button id="logoutBtn" class="nav-btn" type="button">🚪 退出登录</button>
@@ -140,6 +141,27 @@ a{color:#25d366}
       <div id="statsTop" style="margin-top:12px;font-size:13px"></div>
       </div>
     </div>
+  </div>
+  <div id="viewAds" class="hidden">
+    <div><h1>广告费用记账</h1><p class="sub">每笔广告充值 / 花费都记在这里，余额 = 充值总额 − 花费总额</p></div>
+    <div class="row" id="adSummary" style="margin:16px 0"></div>
+    <div style="border:1px solid #eee;border-radius:10px;padding:16px">
+      <h2 style="font-size:17px;margin-bottom:10px">记一笔</h2>
+      <div class="row">
+        <div><label>日期 Date *</label><input id="adDate" type="date"></div>
+        <div><label>平台 Platform</label><input id="adPlatform" list="adPlatforms" value="Meta"><datalist id="adPlatforms"><option>Meta</option><option>Instagram</option><option>Facebook</option><option>Google</option><option>TikTok</option><option>小红书</option><option>其他</option></datalist></div>
+        <div><label>类型 Type *</label><select id="adType"><option value="recharge">充值 Recharge ＋</option><option value="spend">花费 Spend －</option></select></div>
+        <div><label>金额 Amount *</label><input id="adAmount" type="number" min="0" step="0.01" placeholder="如 100"></div>
+        <div><label>币种 Currency</label><select id="adCurrency"><option value="USD">USD 美元 $</option><option value="CNY">CNY 人民币 ¥</option></select></div>
+      </div>
+      <label>备注 Note</label>
+      <input id="adNote" placeholder="如：给 IG 广告账户充值 / 推广 M54 水桶包">
+      <div style="margin-top:6px"><button id="adSaveBtn" class="green">保存这笔 Save</button></div>
+    </div>
+    <table style="margin-top:18px">
+      <thead><tr><th>日期</th><th>平台</th><th>类型</th><th>金额</th><th>备注</th><th>操作</th></tr></thead>
+      <tbody id="adList"></tbody>
+    </table>
   </div>
   </main>
 </div>

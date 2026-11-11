@@ -61,6 +61,21 @@ function saveStats(s) {
   fs.writeFileSync(tmp, JSON.stringify({ days, productViews: s.productViews }, null, 2), 'utf-8');
   fs.renameSync(tmp, STATS_FILE);
 }
+// ---------- 广告费用记账：每笔充值 / 花费（存 data/ad_spend.json，不进仓库） ----------
+const ADS_FILE = path.join(__dirname, 'data', 'ad_spend.json');
+function loadAds() {
+  try {
+    const a = JSON.parse(fs.readFileSync(ADS_FILE, 'utf-8'));
+    return Array.isArray(a) ? a : [];
+  } catch (e) {
+    return [];
+  }
+}
+function saveAds(list) {
+  const tmp = ADS_FILE + '.tmp';
+  fs.writeFileSync(tmp, JSON.stringify(list, null, 2), 'utf-8');
+  fs.renameSync(tmp, ADS_FILE);
+}
 function todayStr(d) { return (d || new Date()).toISOString().slice(0, 10); }
 function trackVisit(req) {
   try {
@@ -185,6 +200,35 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
     .map(([id, views]) => ({ id: codeMap[id] || id, views, name: (products.find((p) => String(p.id) === (codeMap[id] || id)) || {}).name || id }))
     .sort((a, b) => b.views - a.views).slice(0, 10);
   res.json({ ok: true, today: { views: today.views, unique: (today.ips || []).length }, total, last30: dates, topProducts: top });
+});
+
+// 广告费用记账（仅后台）：查全部 / 记一笔（充值或花费）/ 删一笔
+app.get('/api/admin/ad-spend', requireAdmin, (req, res) => {
+  res.json({ ok: true, entries: loadAds() });
+});
+app.post('/api/admin/ad-spend', requireAdmin, (req, res) => {
+  const b = req.body || {};
+  const amount = Number(b.amount);
+  if (!b.date || !['recharge', 'spend'].includes(b.type) || !(amount > 0)) {
+    return res.status(400).json({ ok: false, error: '日期、类型、金额必填，金额要大于 0' });
+  }
+  const list = loadAds();
+  const entry = {
+    id: Date.now().toString(36) + crypto.randomBytes(3).toString('hex'),
+    date: String(b.date).slice(0, 10),
+    platform: String(b.platform || 'Meta'),
+    type: b.type, // recharge = 充值，spend = 花费
+    amount,
+    currency: b.currency === 'CNY' ? 'CNY' : 'USD',
+    note: String(b.note || '')
+  };
+  list.push(entry);
+  saveAds(list);
+  res.json({ ok: true, entry });
+});
+app.delete('/api/admin/ad-spend/:id', requireAdmin, (req, res) => {
+  saveAds(loadAds().filter((e) => String(e.id) !== String(req.params.id)));
+  res.json({ ok: true });
 });
 
 // 上传图片（多张）：表单字段名 images
