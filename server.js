@@ -178,8 +178,10 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
   const total = Object.values(s.days).reduce((a, d) => a + (d.views || 0), 0);
   const today = s.days[todayStr()] || { views: 0, ips: [] };
   const products = loadProducts();
+  let codeMap = {};
+  try { codeMap = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'code-map.json'), 'utf-8')); } catch (e) {}
   const top = Object.entries(s.productViews)
-    .map(([id, views]) => ({ id, views, name: (products.find((p) => String(p.id) === id) || {}).name || id }))
+    .map(([id, views]) => ({ id: codeMap[id] || id, views, name: (products.find((p) => String(p.id) === (codeMap[id] || id)) || {}).name || id }))
     .sort((a, b) => b.views - a.views).slice(0, 10);
   res.json({ ok: true, today: { views: today.views, unique: (today.ips || []).length }, total, last30: dates, topProducts: top });
 });
