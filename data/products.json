@@ -1,1181 +1,1475 @@
 [
-  {
-    "id": "M01",
-    "code": "M01",
-    "name": "P381 X391 LV Louis Vuitton 26新款拉链夹克 Monogram",
-    "name_en": "LV Monogram Zip Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M01.jpg"
-    ],
-    "costCny": 385,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087152",
-    "sold": 4
-  },
-  {
-    "id": "M02",
-    "code": "M02",
-    "name": "P231 W498 LV 翻转效果Logo山羊绒针织外套",
-    "name_en": "LV Cashmere Knit Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M02.jpg"
-    ],
-    "costCny": 385,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087129",
-    "sold": 0
-  },
-  {
-    "id": "M03",
-    "code": "M03",
-    "name": "P296 W032 LV 2026FW 双面穿拉链运动衫外套",
-    "name_en": "LV Double-Face Zip Sweatshirt",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M03.jpg"
-    ],
-    "costCny": 299,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087113",
-    "sold": 0
-  },
-  {
-    "id": "M04",
-    "code": "M04",
-    "name": "P236 T848 LV 26SS标识提花夹克式衬衫",
-    "name_en": "LV Jacquard Logo Shirt Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M04.jpg"
-    ],
-    "costCny": 238,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087088",
-    "sold": 23
-  },
-  {
-    "id": "M05",
-    "code": "M05",
-    "name": "P286 R736 LV 25SS翻领满印工装夹克式衬衫",
-    "name_en": "LV All-over Pattern Work Shirt",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M05.jpg"
-    ],
-    "costCny": 289,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087044",
-    "sold": 33
-  },
-  {
-    "id": "M06",
-    "code": "M06",
-    "name": "LV Laureate系列厚底沙地靴（女款）",
-    "name_en": "LV Laureate Platform Desert Boots",
-    "brand": "Louis Vuitton",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M06.jpg"
-    ],
-    "costCny": 390,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511284",
-    "sold": 7
-  },
-  {
-    "id": "M07",
-    "code": "M07",
-    "name": "路易威登 LV 荔枝纹牛皮翻领飞行员",
-    "name_en": "LV Leather Pilot Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M07.jpg"
-    ],
-    "costCny": 1600,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511231",
-    "sold": 75
-  },
-  {
-    "id": "M08",
-    "code": "M08",
-    "name": "田曦薇同款Gucci双面围巾",
-    "name_en": "Gucci Double-Sided Scarf",
-    "brand": "Gucci",
-    "category": "accessories",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M08.jpg"
-    ],
-    "costCny": 135,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511249",
-    "sold": 8
-  },
-  {
-    "id": "M09",
-    "code": "M09",
-    "name": "Gucci 2.0 最新情侣款运动鞋",
-    "name_en": "Gucci 2.0 Couple Sneakers",
-    "brand": "Gucci",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M09.jpg"
-    ],
-    "costCny": 540,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514487",
-    "sold": 5
-  },
-  {
-    "id": "M10",
-    "code": "M10",
-    "name": "爱马仕双面围巾",
-    "name_en": "Hermes Double-Sided Scarf",
-    "brand": "Hermes",
-    "category": "accessories",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M10.jpg"
-    ],
-    "costCny": 150,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511295",
-    "sold": 74
-  },
-  {
-    "id": "M11",
-    "code": "M11",
-    "name": "爱马仕 Hermès极简翻领羊皮飞行员",
-    "name_en": "Hermes Leather Pilot Jacket",
-    "brand": "Hermes",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M11.jpg"
-    ],
-    "costCny": 1200,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511255",
-    "sold": 139
-  },
-  {
-    "id": "M12",
-    "code": "M12",
-    "name": "凯莉二代mini（风衣灰金棕，进口eom皮，19cm）",
-    "name_en": "Hermes Kelly Mini (19cm)",
-    "brand": "Hermes",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M12.jpg",
-      "/images/M12-1.jpg",
-      "/images/M12-2.jpg",
-      "/images/M12-3.jpg"
-    ],
-    "costCny": 850,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1245088195",
-    "sold": 2
-  },
-  {
-    "id": "M13",
-    "code": "M13",
-    "name": "迪奥 Dior 秋冬款修身直筒牛仔裤",
-    "name_en": "Dior Slim Straight Jeans",
-    "brand": "Dior",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M13.jpg"
-    ],
-    "costCny": 160,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511296",
-    "sold": 0
-  },
-  {
-    "id": "M14",
-    "code": "M14",
-    "name": "2026秋冬新款D-Town粗跟骑士靴",
-    "name_en": "Dior D-Town Chunky Heel Knight Boots",
-    "brand": "Dior",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M14.jpg"
-    ],
-    "costCny": 580,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1240659899",
-    "sold": 0
-  },
-  {
-    "id": "M15",
-    "code": "M15",
-    "name": "最新CH 26NEW 双C刺绣圆领针织上衣",
-    "name_en": "Chanel Double C Embroidered Knit Top",
-    "brand": "Chanel",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M15.jpg",
-      "/images/M15-1.jpg",
-      "/images/M15-2.jpg",
-      "/images/M15-3.jpg",
-      "/images/M15-4.jpg",
-      "/images/M15-5.jpg",
-      "/images/M15-6.jpg"
-    ],
-    "costCny": 360,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514489",
-    "sold": 8
-  },
-  {
-    "id": "M16",
-    "code": "M16",
-    "name": "p150小号 香奈儿豹纹（波点毛绒）手提包",
-    "name_en": "Chanel Leopard Plush Tote Bag",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M16.jpg"
-    ],
-    "costCny": 150,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515007",
-    "sold": 41
-  },
-  {
-    "id": "M17",
-    "code": "M17",
-    "name": "p150 新款香奈儿2色搭配 双C鱼子酱菱格纹包 24×17×6",
-    "name_en": "Chanel Double C Caviar Quilted Bag 24x17x6",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M17.jpg"
-    ],
-    "costCny": 150,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515001",
-    "sold": 26
-  },
-  {
-    "id": "M18",
-    "code": "M18",
-    "name": "PRADA普拉达2025FW新款可拆卸衬衫工装外套",
-    "name_en": "Prada Detachable Work Shirt Jacket",
-    "brand": "Prada",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M18.jpg"
-    ],
-    "costCny": 145,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1229746238",
-    "sold": 7
-  },
-  {
-    "id": "M19",
-    "code": "M19",
-    "name": "最新PR 26NEW 三角标菱格绗缝多口袋棉服外套",
-    "name_en": "Prada Triangle Logo Quilted Jacket",
-    "brand": "Prada",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M19.jpg"
-    ],
-    "costCny": 370,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514482",
-    "sold": 0
-  },
-  {
-    "id": "M20",
-    "code": "M20",
-    "name": "Prada普拉达黑色植绒羽绒服",
-    "name_en": "Prada Black Down Jacket",
-    "brand": "Prada",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M20.jpg"
-    ],
-    "costCny": 510,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515006",
-    "sold": 101
-  },
-  {
-    "id": "M21",
-    "code": "M21",
-    "name": "PRADA 普拉达经典三角标一脚蹬女靴（短靴）",
-    "name_en": "Prada Triangle Logo Slip-On Ankle Boots",
-    "brand": "Prada",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M21.jpg"
-    ],
-    "costCny": 290,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514988",
-    "sold": 0
-  },
-  {
-    "id": "M22",
-    "code": "M22",
-    "name": "Chanel A80758 小香包",
-    "name_en": "Chanel A80758 Quilted Flap Wallet",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M22.jpg"
-    ],
-    "costCny": 290,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252821621",
-    "sold": 0
-  },
-  {
-    "id": "M23",
-    "code": "M23",
-    "name": "LV DOG ON STRA Bag",
-    "name_en": "LV Dog Bag",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M23.jpg"
-    ],
-    "costCny": 320,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=876855949",
-    "sold": 118
-  },
-  {
-    "id": "M24",
+ {
+  "id": "M01",
+  "code": "M01",
+  "name": "P381 X391 LV Louis Vuitton 26新款拉链夹克 Monogram",
+  "name_en": "LV Monogram Zip Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M01.jpg"
+  ],
+  "costCny": 385,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087152",
+  "sold": 4
+ },
+ {
+  "id": "M02",
+  "code": "M02",
+  "name": "P231 W498 LV 翻转效果Logo山羊绒针织外套",
+  "name_en": "LV Cashmere Knit Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M02.jpg"
+  ],
+  "costCny": 385,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087129",
+  "sold": 0
+ },
+ {
+  "id": "M03",
+  "code": "M03",
+  "name": "P296 W032 LV 2026FW 双面穿拉链运动衫外套",
+  "name_en": "LV Double-Face Zip Sweatshirt",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M03.jpg"
+  ],
+  "costCny": 299,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087113",
+  "sold": 0
+ },
+ {
+  "id": "M04",
+  "code": "M04",
+  "name": "P236 T848 LV 26SS标识提花夹克式衬衫",
+  "name_en": "LV Jacquard Logo Shirt Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M04.jpg"
+  ],
+  "costCny": 238,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087088",
+  "sold": 23
+ },
+ {
+  "id": "M05",
+  "code": "M05",
+  "name": "P286 R736 LV 25SS翻领满印工装夹克式衬衫",
+  "name_en": "LV All-over Pattern Work Shirt",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M05.jpg"
+  ],
+  "costCny": 289,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087044",
+  "sold": 33
+ },
+ {
+  "id": "M06",
+  "code": "M06",
+  "name": "LV Laureate系列厚底沙地靴（女款）",
+  "name_en": "LV Laureate Platform Desert Boots",
+  "brand": "Louis Vuitton",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M06.jpg"
+  ],
+  "costCny": 390,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511284",
+  "sold": 7
+ },
+ {
+  "id": "M07",
+  "code": "M07",
+  "name": "路易威登 LV 荔枝纹牛皮翻领飞行员",
+  "name_en": "LV Leather Pilot Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M07.jpg"
+  ],
+  "costCny": 1600,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511231",
+  "sold": 75
+ },
+ {
+  "id": "M08",
+  "code": "M08",
+  "name": "田曦薇同款Gucci双面围巾",
+  "name_en": "Gucci Double-Sided Scarf",
+  "brand": "Gucci",
+  "category": "accessories",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M08.jpg"
+  ],
+  "costCny": 135,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511249",
+  "sold": 8
+ },
+ {
+  "id": "M09",
+  "code": "M09",
+  "name": "Gucci 2.0 最新情侣款运动鞋",
+  "name_en": "Gucci 2.0 Couple Sneakers",
+  "brand": "Gucci",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M09.jpg"
+  ],
+  "costCny": 540,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514487",
+  "sold": 5
+ },
+ {
+  "id": "M10",
+  "code": "M10",
+  "name": "爱马仕双面围巾",
+  "name_en": "Hermes Double-Sided Scarf",
+  "brand": "Hermes",
+  "category": "accessories",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M10.jpg"
+  ],
+  "costCny": 150,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511295",
+  "sold": 74
+ },
+ {
+  "id": "M11",
+  "code": "M11",
+  "name": "爱马仕 Hermès极简翻领羊皮飞行员",
+  "name_en": "Hermes Leather Pilot Jacket",
+  "brand": "Hermes",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M11.jpg"
+  ],
+  "costCny": 1200,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511255",
+  "sold": 139
+ },
+ {
+  "id": "M12",
+  "code": "M12",
+  "name": "凯莉二代mini（风衣灰金棕，进口eom皮，19cm）",
+  "name_en": "Hermes Kelly Mini (19cm)",
+  "brand": "Hermes",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M12.jpg",
+   "/images/M12-1.jpg",
+   "/images/M12-2.jpg",
+   "/images/M12-3.jpg"
+  ],
+  "costCny": 850,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1245088195",
+  "sold": 2
+ },
+ {
+  "id": "M13",
+  "code": "M13",
+  "name": "迪奥 Dior 秋冬款修身直筒牛仔裤",
+  "name_en": "Dior Slim Straight Jeans",
+  "brand": "Dior",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M13.jpg"
+  ],
+  "costCny": 160,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252511296",
+  "sold": 0
+ },
+ {
+  "id": "M14",
+  "code": "M14",
+  "name": "2026秋冬新款D-Town粗跟骑士靴",
+  "name_en": "Dior D-Town Chunky Heel Knight Boots",
+  "brand": "Dior",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M14.jpg"
+  ],
+  "costCny": 580,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1240659899",
+  "sold": 0
+ },
+ {
+  "id": "M15",
+  "code": "M15",
+  "name": "最新CH 26NEW 双C刺绣圆领针织上衣",
+  "name_en": "Chanel Double C Embroidered Knit Top",
+  "brand": "Chanel",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M15.jpg",
+   "/images/M15-1.jpg",
+   "/images/M15-2.jpg",
+   "/images/M15-3.jpg",
+   "/images/M15-4.jpg",
+   "/images/M15-5.jpg",
+   "/images/M15-6.jpg"
+  ],
+  "costCny": 360,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514489",
+  "sold": 8
+ },
+ {
+  "id": "M16",
+  "code": "M16",
+  "name": "p150小号 香奈儿豹纹（波点毛绒）手提包",
+  "name_en": "Chanel Leopard Plush Tote Bag",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M16.jpg"
+  ],
+  "costCny": 150,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515007",
+  "sold": 41
+ },
+ {
+  "id": "M17",
+  "code": "M17",
+  "name": "p150 新款香奈儿2色搭配 双C鱼子酱菱格纹包 24×17×6",
+  "name_en": "Chanel Double C Caviar Quilted Bag 24x17x6",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M17.jpg"
+  ],
+  "costCny": 150,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515001",
+  "sold": 26
+ },
+ {
+  "id": "M18",
+  "code": "M18",
+  "name": "PRADA普拉达2025FW新款可拆卸衬衫工装外套",
+  "name_en": "Prada Detachable Work Shirt Jacket",
+  "brand": "Prada",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M18.jpg"
+  ],
+  "costCny": 145,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1229746238",
+  "sold": 7
+ },
+ {
+  "id": "M19",
+  "code": "M19",
+  "name": "最新PR 26NEW 三角标菱格绗缝多口袋棉服外套",
+  "name_en": "Prada Triangle Logo Quilted Jacket",
+  "brand": "Prada",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M19.jpg"
+  ],
+  "costCny": 370,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514482",
+  "sold": 0
+ },
+ {
+  "id": "M20",
+  "code": "M20",
+  "name": "Prada普拉达黑色植绒羽绒服",
+  "name_en": "Prada Black Down Jacket",
+  "brand": "Prada",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M20.jpg"
+  ],
+  "costCny": 510,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515006",
+  "sold": 101
+ },
+ {
+  "id": "M21",
+  "code": "M21",
+  "name": "PRADA 普拉达经典三角标一脚蹬女靴（短靴）",
+  "name_en": "Prada Triangle Logo Slip-On Ankle Boots",
+  "brand": "Prada",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M21.jpg"
+  ],
+  "costCny": 290,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252514988",
+  "sold": 0
+ },
+ {
+  "id": "M22",
+  "code": "M22",
+  "name": "Chanel A80758 小香包",
+  "name_en": "Chanel A80758 Quilted Flap Wallet",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M22.jpg"
+  ],
+  "costCny": 290,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252821621",
+  "sold": 0
+ },
+ {
+  "id": "M23",
+  "code": "M23",
+  "name": "LV DOG ON STRA Bag",
+  "name_en": "LV Dog Bag",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M23.jpg"
+  ],
+  "costCny": 320,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=876855949",
+  "sold": 118
+ },
+ {
+  "id": "M24",
+  "code": "M24",
+  "name": "Gucci Jetset Marmont",
+  "name_en": "Gucci Jetset Marmont Bag",
+  "brand": "Gucci",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M24.jpg"
+  ],
+  "variants": [
+   {
+    "color": "米色",
+    "color_en": "Beige",
     "code": "M24",
-    "name": "Gucci Jetset Marmont",
-    "name_en": "Gucci Jetset Marmont Bag",
-    "brand": "Gucci",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M24.jpg"
-    ],
-    "variants": [
-      {
-        "color": "米色",
-        "color_en": "Beige",
-        "code": "M24",
-        "image": "/images/M24.jpg",
-        "costCny": 500
-      },
-      {
-        "color": "黑色帆布",
-        "color_en": "Black Canvas",
-        "code": "M25",
-        "image": "/images/M25.jpg",
-        "costCny": 550
-      }
-    ],
-    "costCny": 500,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252821637",
-    "sold": 47
-  },
-  {
-    "id": "M26",
+    "image": "/images/M24.jpg",
+    "costCny": 500
+   },
+   {
+    "color": "黑色帆布",
+    "color_en": "Black Canvas",
+    "code": "M25",
+    "image": "/images/M25.jpg",
+    "costCny": 550
+   }
+  ],
+  "costCny": 500,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252821637",
+  "sold": 47
+ },
+ {
+  "id": "M26",
+  "code": "M26",
+  "name": "Chanel A81081 链条小卡包",
+  "name_en": "Chanel A81081 Chain Card Bag",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M26.jpg"
+  ],
+  "variants": [
+   {
+    "color": "大红",
+    "color_en": "Red",
     "code": "M26",
-    "name": "Chanel A81081 链条小卡包",
-    "name_en": "Chanel A81081 Chain Card Bag",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M26.jpg"
-    ],
-    "variants": [
-      {
-        "color": "大红",
-        "color_en": "Red",
-        "code": "M26",
-        "image": "/images/M26.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "浅蓝",
-        "color_en": "Light Blue",
-        "code": "M27",
-        "image": "/images/M27.jpg",
-        "costCny": 260
-      }
-    ],
-    "costCny": 260,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824214",
-    "sold": 42
-  },
-  {
-    "id": "M28",
+    "image": "/images/M26.jpg",
+    "costCny": 260
+   },
+   {
+    "color": "浅蓝",
+    "color_en": "Light Blue",
+    "code": "M27",
+    "image": "/images/M27.jpg",
+    "costCny": 260
+   }
+  ],
+  "costCny": 260,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824214",
+  "sold": 42
+ },
+ {
+  "id": "M28",
+  "code": "M28",
+  "name": "Chanel 26K 月牙 Hobo",
+  "name_en": "Chanel 26K Crescent Hobo",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M28.jpg"
+  ],
+  "variants": [
+   {
+    "color": "黑金",
+    "color_en": "Black Gold",
     "code": "M28",
-    "name": "Chanel 26K 月牙 Hobo",
-    "name_en": "Chanel 26K Crescent Hobo",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M28.jpg"
-    ],
-    "variants": [
-      {
-        "color": "黑金",
-        "color_en": "Black Gold",
-        "code": "M28",
-        "image": "/images/M28.jpg",
-        "costCny": 1050
-      },
-      {
-        "color": "酒红",
-        "color_en": "Burgundy",
-        "code": "M29",
-        "image": "/images/M29.jpg",
-        "costCny": 1050
-      },
-      {
-        "color": "绿色",
-        "color_en": "Green",
-        "code": "M30",
-        "image": "/images/M30.jpg",
-        "costCny": 1050
-      },
-      {
-        "color": "白色",
-        "color_en": "White",
-        "code": "M31",
-        "image": "/images/M31.jpg",
-        "costCny": 1050
-      }
-    ],
-    "costCny": 1050,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824179",
-    "sold": 99
-  },
-  {
-    "id": "M32",
+    "image": "/images/M28.jpg",
+    "costCny": 1050
+   },
+   {
+    "color": "酒红",
+    "color_en": "Burgundy",
+    "code": "M29",
+    "image": "/images/M29.jpg",
+    "costCny": 1050
+   },
+   {
+    "color": "绿色",
+    "color_en": "Green",
+    "code": "M30",
+    "image": "/images/M30.jpg",
+    "costCny": 1050
+   },
+   {
+    "color": "白色",
+    "color_en": "White",
+    "code": "M31",
+    "image": "/images/M31.jpg",
+    "costCny": 1050
+   }
+  ],
+  "costCny": 1050,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824179",
+  "sold": 99
+ },
+ {
+  "id": "M32",
+  "code": "M32",
+  "name": "LV 圆领针织毛衣",
+  "name_en": "LV Crew Neck Knit Sweater",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M32.jpg"
+  ],
+  "variants": [
+   {
+    "color": "橙色",
+    "color_en": "Orange",
     "code": "M32",
-    "name": "LV 圆领针织毛衣",
-    "name_en": "LV Crew Neck Knit Sweater",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M32.jpg"
-    ],
-    "variants": [
-      {
-        "color": "橙色",
-        "color_en": "Orange",
-        "code": "M32",
-        "image": "/images/M32.jpg",
-        "costCny": 200
-      },
-      {
-        "color": "红色",
-        "color_en": "Red",
-        "code": "M33",
-        "image": "/images/M33.jpg",
-        "costCny": 210
-      }
-    ],
-    "costCny": 200,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247086372",
-    "sold": 38
-  },
-  {
-    "id": "M34",
-    "code": "M34",
-    "name": "LV P233 牛仔阔腿裤",
-    "name_en": "LV P233 Wide-Leg Jeans",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M34.jpg"
-    ],
-    "costCny": 235,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247086266",
-    "sold": 9
-  },
-  {
-    "id": "M35",
-    "code": "M35",
-    "name": "LV P560 羽绒服",
-    "name_en": "LV P560 Down Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M35.jpg"
-    ],
-    "costCny": 566,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247084889",
-    "sold": 32
-  },
-  {
-    "id": "M36",
-    "code": "M36",
-    "name": "LV P340 夹克外套",
-    "name_en": "LV P340 Jacket",
-    "brand": "Louis Vuitton",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M36.jpg"
-    ],
-    "costCny": 343,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247084514",
-    "sold": 99
-  },
-  {
-    "id": "M37",
+    "image": "/images/M32.jpg",
+    "costCny": 200
+   },
+   {
+    "color": "红色",
+    "color_en": "Red",
+    "code": "M33",
+    "image": "/images/M33.jpg",
+    "costCny": 210
+   }
+  ],
+  "costCny": 200,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247086372",
+  "sold": 38
+ },
+ {
+  "id": "M34",
+  "code": "M34",
+  "name": "LV P233 牛仔阔腿裤",
+  "name_en": "LV P233 Wide-Leg Jeans",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M34.jpg"
+  ],
+  "costCny": 235,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247086266",
+  "sold": 9
+ },
+ {
+  "id": "M35",
+  "code": "M35",
+  "name": "LV P560 羽绒服",
+  "name_en": "LV P560 Down Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M35.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247084889",
+  "sold": 32
+ },
+ {
+  "id": "M36",
+  "code": "M36",
+  "name": "LV P340 夹克外套",
+  "name_en": "LV P340 Jacket",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M36.jpg"
+  ],
+  "costCny": 343,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247084514",
+  "sold": 99
+ },
+ {
+  "id": "M37",
+  "code": "M37",
+  "name": "Loro Piana 乐福鞋",
+  "name_en": "Loro Piana Loafers",
+  "brand": "Loro Piana",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M37.jpg"
+  ],
+  "variants": [
+   {
+    "color": "雾霾蓝",
+    "color_en": "Haze Blue",
     "code": "M37",
-    "name": "Loro Piana 乐福鞋",
-    "name_en": "Loro Piana Loafers",
-    "brand": "Loro Piana",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M37.jpg"
-    ],
-    "variants": [
-      {
-        "color": "雾霾蓝",
-        "color_en": "Haze Blue",
-        "code": "M37",
-        "image": "/images/M37.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "粉色",
-        "color_en": "Pink",
-        "code": "M38",
-        "image": "/images/M38.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "黑色",
-        "color_en": "Black",
-        "code": "M39",
-        "image": "/images/M39.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "南极白",
-        "color_en": "White",
-        "code": "M40",
-        "image": "/images/M40.jpg",
-        "costCny": 260
-      }
-    ],
-    "costCny": 260,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1243635150",
-    "sold": 4
-  },
-  {
-    "id": "M41",
-    "code": "M41",
-    "name": "Balenciaga COMBAT STRIKE 拉链靴",
-    "name_en": "Balenciaga Combat Strike Zip Boots",
-    "brand": "Balenciaga",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M41.jpg"
-    ],
-    "costCny": 700,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824111",
-    "sold": 0
-  },
-  {
-    "id": "M42",
-    "code": "M42",
-    "name": "LV Trainer 羊皮革鞋",
-    "name_en": "LV Trainer Leather Shoes",
-    "brand": "Louis Vuitton",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M42.jpg"
-    ],
-    "costCny": 558,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824232",
-    "sold": 0
-  },
-  {
-    "id": "M43",
-    "code": "M43",
-    "name": "LV Beverly Hills 运动休闲鞋",
-    "name_en": "LV Beverly Hills Sneakers",
-    "brand": "Louis Vuitton",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M43.jpg"
-    ],
-    "costCny": 340,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824992",
-    "sold": 0
-  },
-  {
-    "id": "M44",
-    "code": "M44",
-    "name": "Ferragamo 休闲套脚男鞋",
-    "name_en": "Ferragamo Slip-On Loafers",
-    "brand": "Ferragamo",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M44.jpg"
-    ],
-    "costCny": 170,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824969",
-    "sold": 0
-  },
-  {
-    "id": "M45",
-    "code": "M45",
-    "name": "Burberry Terrace 格纹休闲鞋",
-    "name_en": "Burberry Terrace Check Sneakers",
-    "brand": "Burberry",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M45.jpg"
-    ],
-    "costCny": 300,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824975",
-    "sold": 34
-  },
-  {
-    "id": "M46",
-    "code": "M46",
-    "name": "Gucci 休闲套脚男鞋",
-    "name_en": "Gucci Slip-On Loafers",
-    "brand": "Gucci",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M46.jpg"
-    ],
-    "costCny": 180,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824943",
-    "sold": 54
-  },
-  {
-    "id": "M47",
-    "code": "M47",
-    "name": "LV 四叶草项链 A1055",
-    "name_en": "LV Four-Leaf Clover Necklace A1055",
-    "brand": "Louis Vuitton",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M47.jpg"
-    ],
-    "costCny": 70,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252829789",
-    "sold": 41
-  },
-  {
-    "id": "M48",
-    "code": "M48",
-    "name": "Dior 四叶草项链 A1045",
-    "name_en": "Dior Four-Leaf Clover Necklace A1045",
-    "brand": "Dior",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M48.jpg"
-    ],
-    "costCny": 60,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252829794",
-    "sold": 9
-  },
-  {
-    "id": "M49",
-    "code": "M49",
-    "name": "APM Monaco 御邪之眼小蛮腰项链",
-    "name_en": "APM Monaco Evil Eye Necklace",
-    "brand": "APM Monaco",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M49.jpg"
-    ],
-    "costCny": 70,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834988",
-    "sold": 60
-  },
-  {
-    "id": "M50",
-    "code": "M50",
-    "name": "Swarovski 射手座守护神锁骨项链",
-    "name_en": "Swarovski Sagittarius Guardian Necklace",
-    "brand": "Swarovski",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M50.jpg"
-    ],
-    "costCny": 50,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834962",
-    "sold": 35
-  },
-  {
-    "id": "M51",
-    "code": "M51",
-    "name": "LV 耳钉",
-    "name_en": "LV Flower Stud Earrings",
-    "brand": "Louis Vuitton",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M51.jpg"
-    ],
-    "costCny": 55,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834918",
-    "sold": 23
-  },
-  {
-    "id": "M52",
-    "code": "M52",
-    "name": "LV Twig 耳钉",
-    "name_en": "LV Twig Hoop Earrings",
-    "brand": "Louis Vuitton",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M52.jpg"
-    ],
-    "costCny": 65,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834877",
-    "sold": 7
-  },
-  {
-    "id": "M53",
-    "code": "M53",
-    "name": "LV Twig 四叶草手镯",
-    "name_en": "LV Twig Clover Bangle",
-    "brand": "Louis Vuitton",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M53.jpg"
-    ],
-    "costCny": 55,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834898",
-    "sold": 0
-  },
-  {
-    "id": "M54",
-    "code": "M54",
-    "name": "LV 水桶 BB 老花水桶包",
-    "name_en": "LV Bucket BB (M46581)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M54.jpg"
-    ],
-    "costCny": 290,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851231",
-    "sold": 21
-  },
-  {
-    "id": "M55",
-    "code": "M55",
-    "name": "LV Camera Box 盒子包",
-    "name_en": "LV Camera Box (M82465)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M55.jpg"
-    ],
-    "costCny": 320,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851226",
-    "sold": 5
-  },
-  {
-    "id": "M56",
-    "code": "M56",
-    "name": "LV 发财桶",
-    "name_en": "LV Bucket Bag (M43986)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M56.jpg"
-    ],
-    "costCny": 350,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851241",
-    "sold": 0
-  },
-  {
-    "id": "M57",
-    "code": "M57",
-    "name": "LV Neverfull BB",
-    "name_en": "LV Neverfull BB (M46705)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M57.jpg"
-    ],
-    "costCny": 320,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851236",
-    "sold": 80
-  },
-  {
-    "id": "M58",
-    "code": "M58",
-    "name": "LV OnTheGo 小号（丛林）",
-    "name_en": "LV OnTheGo PM (M46373)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M58.jpg"
-    ],
-    "costCny": 580,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851198",
-    "sold": 7
-  },
-  {
-    "id": "M59",
-    "code": "M59",
-    "name": "LV Carryall Dark 小号（黑武士）",
-    "name_en": "LV Carryall Dark PM (M24861)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M59.jpg"
-    ],
-    "costCny": 750,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851193",
-    "sold": 8
-  },
-  {
-    "id": "M60",
-    "code": "M60",
-    "name": "LV 黄牛角月牙形手袋",
-    "name_en": "LV Crescent Bag (M45832)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M60.jpg"
-    ],
-    "costCny": 580,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851085",
-    "sold": 43
-  },
-  {
-    "id": "M61",
-    "code": "M61",
-    "name": "LV Nano Speedy 蓝色丹宁牛仔",
-    "name_en": "LV Nano Speedy Denim (M82950)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M61.jpg"
-    ],
-    "costCny": 540,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1170855021",
-    "sold": 0
-  },
-  {
-    "id": "M62",
-    "code": "M62",
-    "name": "LV Alma Soft 手提包",
-    "name_en": "LV Alma Soft",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M62.jpg"
-    ],
-    "costCny": 230,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852516",
-    "sold": 8
-  },
-  {
-    "id": "M63",
-    "code": "M63",
-    "name": "LV Mini Pochette Accessories 老花",
-    "name_en": "LV Mini Pochette Accessories (N58009)",
-    "brand": "Louis Vuitton",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M63.jpg"
-    ],
-    "costCny": 555,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852805",
-    "sold": 86
-  },
-  {
-    "id": "M64",
-    "code": "M64",
-    "name": "香奈儿磨砂嬉皮腋下包",
-    "name_en": "Chanel Suede Drawstring Bucket Bag",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M64.jpg"
-    ],
-    "costCny": 160,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515020",
-    "sold": 0
-  },
-  {
-    "id": "M65",
-    "code": "M65",
-    "name": "香奈儿26a高级手工坊三角tote包",
-    "name_en": "Chanel Triangle Tote",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M65.jpg"
-    ],
-    "costCny": 150,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515025",
-    "sold": 0
-  },
-  {
-    "id": "M66",
-    "code": "M66",
-    "name": "小香风22 Bag链条大容量包包",
-    "name_en": "Chanel 22 Bag",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M66.jpg"
-    ],
-    "costCny": 1041,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456182",
-    "sold": 92
-  },
-  {
-    "id": "M67",
-    "code": "M67",
-    "name": "小香风银色菱格链条化妆包",
-    "name_en": "Chanel Silver Quilted Vanity Bag",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M67.jpg"
-    ],
-    "costCny": 1687,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456175",
-    "sold": 0
-  },
-  {
-    "id": "M68",
-    "code": "M68",
-    "name": "小金球菱格链条小方包",
-    "name_en": "Chanel Classic Flap Mini",
-    "brand": "Chanel",
-    "category": "bags",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M68.jpg"
-    ],
-    "costCny": 866,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456087",
-    "sold": 16
-  }
+    "image": "/images/M37.jpg",
+    "costCny": 260
+   },
+   {
+    "color": "粉色",
+    "color_en": "Pink",
+    "code": "M38",
+    "image": "/images/M38.jpg",
+    "costCny": 260
+   },
+   {
+    "color": "黑色",
+    "color_en": "Black",
+    "code": "M39",
+    "image": "/images/M39.jpg",
+    "costCny": 260
+   },
+   {
+    "color": "南极白",
+    "color_en": "White",
+    "code": "M40",
+    "image": "/images/M40.jpg",
+    "costCny": 260
+   }
+  ],
+  "costCny": 260,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1243635150",
+  "sold": 4
+ },
+ {
+  "id": "M41",
+  "code": "M41",
+  "name": "Balenciaga COMBAT STRIKE 拉链靴",
+  "name_en": "Balenciaga Combat Strike Zip Boots",
+  "brand": "Balenciaga",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M41.jpg"
+  ],
+  "costCny": 700,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824111",
+  "sold": 0
+ },
+ {
+  "id": "M42",
+  "code": "M42",
+  "name": "LV Trainer 羊皮革鞋",
+  "name_en": "LV Trainer Leather Shoes",
+  "brand": "Louis Vuitton",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M42.jpg"
+  ],
+  "costCny": 558,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824232",
+  "sold": 0
+ },
+ {
+  "id": "M43",
+  "code": "M43",
+  "name": "LV Beverly Hills 运动休闲鞋",
+  "name_en": "LV Beverly Hills Sneakers",
+  "brand": "Louis Vuitton",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M43.jpg"
+  ],
+  "costCny": 340,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824992",
+  "sold": 0
+ },
+ {
+  "id": "M44",
+  "code": "M44",
+  "name": "Ferragamo 休闲套脚男鞋",
+  "name_en": "Ferragamo Slip-On Loafers",
+  "brand": "Ferragamo",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M44.jpg"
+  ],
+  "costCny": 170,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824969",
+  "sold": 0
+ },
+ {
+  "id": "M45",
+  "code": "M45",
+  "name": "Burberry Terrace 格纹休闲鞋",
+  "name_en": "Burberry Terrace Check Sneakers",
+  "brand": "Burberry",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M45.jpg"
+  ],
+  "costCny": 300,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824975",
+  "sold": 34
+ },
+ {
+  "id": "M46",
+  "code": "M46",
+  "name": "Gucci 休闲套脚男鞋",
+  "name_en": "Gucci Slip-On Loafers",
+  "brand": "Gucci",
+  "category": "shoes",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M46.jpg"
+  ],
+  "costCny": 180,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824943",
+  "sold": 54
+ },
+ {
+  "id": "M47",
+  "code": "M47",
+  "name": "LV 四叶草项链 A1055",
+  "name_en": "LV Four-Leaf Clover Necklace A1055",
+  "brand": "Louis Vuitton",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M47.jpg"
+  ],
+  "costCny": 70,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252829789",
+  "sold": 41
+ },
+ {
+  "id": "M48",
+  "code": "M48",
+  "name": "Dior 四叶草项链 A1045",
+  "name_en": "Dior Four-Leaf Clover Necklace A1045",
+  "brand": "Dior",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M48.jpg"
+  ],
+  "costCny": 60,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252829794",
+  "sold": 9
+ },
+ {
+  "id": "M49",
+  "code": "M49",
+  "name": "APM Monaco 御邪之眼小蛮腰项链",
+  "name_en": "APM Monaco Evil Eye Necklace",
+  "brand": "APM Monaco",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M49.jpg"
+  ],
+  "costCny": 70,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834988",
+  "sold": 60
+ },
+ {
+  "id": "M50",
+  "code": "M50",
+  "name": "Swarovski 射手座守护神锁骨项链",
+  "name_en": "Swarovski Sagittarius Guardian Necklace",
+  "brand": "Swarovski",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M50.jpg"
+  ],
+  "costCny": 50,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834962",
+  "sold": 35
+ },
+ {
+  "id": "M51",
+  "code": "M51",
+  "name": "LV 耳钉",
+  "name_en": "LV Flower Stud Earrings",
+  "brand": "Louis Vuitton",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M51.jpg"
+  ],
+  "costCny": 55,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834918",
+  "sold": 23
+ },
+ {
+  "id": "M52",
+  "code": "M52",
+  "name": "LV Twig 耳钉",
+  "name_en": "LV Twig Hoop Earrings",
+  "brand": "Louis Vuitton",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M52.jpg"
+  ],
+  "costCny": 65,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834877",
+  "sold": 7
+ },
+ {
+  "id": "M53",
+  "code": "M53",
+  "name": "LV Twig 四叶草手镯",
+  "name_en": "LV Twig Clover Bangle",
+  "brand": "Louis Vuitton",
+  "category": "jewelry",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M53.jpg"
+  ],
+  "costCny": 55,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834898",
+  "sold": 0
+ },
+ {
+  "id": "M54",
+  "code": "M54",
+  "name": "LV 水桶 BB 老花水桶包",
+  "name_en": "LV Bucket BB (M46581)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M54.jpg"
+  ],
+  "costCny": 290,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851231",
+  "sold": 21
+ },
+ {
+  "id": "M55",
+  "code": "M55",
+  "name": "LV Camera Box 盒子包",
+  "name_en": "LV Camera Box (M82465)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M55.jpg"
+  ],
+  "costCny": 320,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851226",
+  "sold": 5
+ },
+ {
+  "id": "M56",
+  "code": "M56",
+  "name": "LV 发财桶",
+  "name_en": "LV Bucket Bag (M43986)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M56.jpg"
+  ],
+  "costCny": 350,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851241",
+  "sold": 0
+ },
+ {
+  "id": "M57",
+  "code": "M57",
+  "name": "LV Neverfull BB",
+  "name_en": "LV Neverfull BB (M46705)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M57.jpg"
+  ],
+  "costCny": 320,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851236",
+  "sold": 80
+ },
+ {
+  "id": "M58",
+  "code": "M58",
+  "name": "LV OnTheGo 小号（丛林）",
+  "name_en": "LV OnTheGo PM (M46373)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M58.jpg"
+  ],
+  "costCny": 580,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851198",
+  "sold": 7
+ },
+ {
+  "id": "M59",
+  "code": "M59",
+  "name": "LV Carryall Dark 小号（黑武士）",
+  "name_en": "LV Carryall Dark PM (M24861)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M59.jpg"
+  ],
+  "costCny": 750,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851193",
+  "sold": 8
+ },
+ {
+  "id": "M60",
+  "code": "M60",
+  "name": "LV 黄牛角月牙形手袋",
+  "name_en": "LV Crescent Bag (M45832)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M60.jpg"
+  ],
+  "costCny": 580,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252851085",
+  "sold": 43
+ },
+ {
+  "id": "M61",
+  "code": "M61",
+  "name": "LV Nano Speedy 蓝色丹宁牛仔",
+  "name_en": "LV Nano Speedy Denim (M82950)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M61.jpg"
+  ],
+  "costCny": 540,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1170855021",
+  "sold": 0
+ },
+ {
+  "id": "M62",
+  "code": "M62",
+  "name": "LV Alma Soft 手提包",
+  "name_en": "LV Alma Soft",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M62.jpg"
+  ],
+  "costCny": 230,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852516",
+  "sold": 8
+ },
+ {
+  "id": "M63",
+  "code": "M63",
+  "name": "LV Mini Pochette Accessories 老花",
+  "name_en": "LV Mini Pochette Accessories (N58009)",
+  "brand": "Louis Vuitton",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M63.jpg"
+  ],
+  "costCny": 555,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252852805",
+  "sold": 86
+ },
+ {
+  "id": "M64",
+  "code": "M64",
+  "name": "香奈儿磨砂嬉皮腋下包",
+  "name_en": "Chanel Suede Drawstring Bucket Bag",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M64.jpg"
+  ],
+  "costCny": 160,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515020",
+  "sold": 0
+ },
+ {
+  "id": "M65",
+  "code": "M65",
+  "name": "香奈儿26a高级手工坊三角tote包",
+  "name_en": "Chanel Triangle Tote",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M65.jpg"
+  ],
+  "costCny": 150,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252515025",
+  "sold": 0
+ },
+ {
+  "id": "M66",
+  "code": "M66",
+  "name": "小香风22 Bag链条大容量包包",
+  "name_en": "Chanel 22 Bag",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M66.jpg"
+  ],
+  "costCny": 1041,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456182",
+  "sold": 92
+ },
+ {
+  "id": "M67",
+  "code": "M67",
+  "name": "小香风银色菱格链条化妆包",
+  "name_en": "Chanel Silver Quilted Vanity Bag",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M67.jpg"
+  ],
+  "costCny": 1687,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456175",
+  "sold": 0
+ },
+ {
+  "id": "M68",
+  "code": "M68",
+  "name": "小金球菱格链条小方包",
+  "name_en": "Chanel Classic Flap Mini",
+  "brand": "Chanel",
+  "category": "bags",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M68.jpg"
+  ],
+  "costCny": 866,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=781456087",
+  "sold": 16
+ },
+ {
+  "id": "M69",
+  "code": "M69",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（白色）",
+  "name_en": "LV P560 Down Jacket White",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M69.jpg",
+   "/images/M69-1.jpg",
+   "/images/M69-2.jpg",
+   "/images/M69-3.jpg",
+   "/images/M69-4.jpg",
+   "/images/M69-5.jpg",
+   "/images/M69-6.jpg",
+   "/images/M69-7.jpg",
+   "/images/M69-8.jpg",
+   "/images/M69-9.jpg",
+   "/images/M69-10.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915644",
+  "sold": 23
+ },
+ {
+  "id": "M70",
+  "code": "M70",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（黑色）",
+  "name_en": "LV P560 Down Jacket Black",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M70.jpg",
+   "/images/M70-1.jpg",
+   "/images/M70-2.jpg",
+   "/images/M70-3.jpg",
+   "/images/M70-4.jpg",
+   "/images/M70-5.jpg",
+   "/images/M70-6.jpg",
+   "/images/M70-7.jpg",
+   "/images/M70-8.jpg",
+   "/images/M70-9.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915626",
+  "sold": 41
+ },
+ {
+  "id": "M71",
+  "code": "M71",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（蓝白老花）",
+  "name_en": "LV P560 Down Jacket Blue White Monogram",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M71.jpg",
+   "/images/M71-1.jpg",
+   "/images/M71-2.jpg",
+   "/images/M71-3.jpg",
+   "/images/M71-4.jpg",
+   "/images/M71-5.jpg",
+   "/images/M71-6.jpg",
+   "/images/M71-7.jpg",
+   "/images/M71-8.jpg",
+   "/images/M71-9.jpg",
+   "/images/M71-10.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915613",
+  "sold": 12
+ },
+ {
+  "id": "M72",
+  "code": "M72",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（棕色老花）",
+  "name_en": "LV P560 Down Jacket Brown Monogram",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M72.jpg",
+   "/images/M72-1.jpg",
+   "/images/M72-2.jpg",
+   "/images/M72-3.jpg",
+   "/images/M72-4.jpg",
+   "/images/M72-5.jpg",
+   "/images/M72-6.jpg",
+   "/images/M72-7.jpg",
+   "/images/M72-8.jpg",
+   "/images/M72-9.jpg",
+   "/images/M72-10.jpg",
+   "/images/M72-11.jpg",
+   "/images/M72-12.jpg",
+   "/images/M72-13.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915497",
+  "sold": 35
+ },
+ {
+  "id": "M73",
+  "code": "M73",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（棕色拼贴徽章款）",
+  "name_en": "LV P560 Down Jacket Brown Patch",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M73.jpg",
+   "/images/M73-1.jpg",
+   "/images/M73-2.jpg",
+   "/images/M73-3.jpg",
+   "/images/M73-4.jpg",
+   "/images/M73-5.jpg",
+   "/images/M73-6.jpg",
+   "/images/M73-7.jpg",
+   "/images/M73-8.jpg",
+   "/images/M73-9.jpg",
+   "/images/M73-10.jpg",
+   "/images/M73-11.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915471",
+  "sold": 6
+ },
+ {
+  "id": "M74",
+  "code": "M74",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（深蓝圆点老花）",
+  "name_en": "LV P560 Down Jacket Navy Monogram",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M74.jpg",
+   "/images/M74-1.jpg",
+   "/images/M74-2.jpg",
+   "/images/M74-3.jpg",
+   "/images/M74-4.jpg",
+   "/images/M74-5.jpg",
+   "/images/M74-6.jpg",
+   "/images/M74-7.jpg",
+   "/images/M74-8.jpg",
+   "/images/M74-9.jpg",
+   "/images/M74-10.jpg",
+   "/images/M74-11.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246915424",
+  "sold": 18
+ },
+ {
+  "id": "M75",
+  "code": "M75",
+  "name": "P450 LV 官网款2026秋冬新款羽绒服（黑色）",
+  "name_en": "LV P450 Down Jacket Black",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M75.jpg",
+   "/images/M75-1.jpg",
+   "/images/M75-2.jpg",
+   "/images/M75-3.jpg",
+   "/images/M75-4.jpg",
+   "/images/M75-5.jpg",
+   "/images/M75-6.jpg",
+   "/images/M75-7.jpg",
+   "/images/M75-8.jpg",
+   "/images/M75-9.jpg",
+   "/images/M75-10.jpg",
+   "/images/M75-11.jpg",
+   "/images/M75-12.jpg",
+   "/images/M75-13.jpg"
+  ],
+  "costCny": 454,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246910457",
+  "sold": 27
+ },
+ {
+  "id": "M76",
+  "code": "M76",
+  "name": "P460 LV 官网款2026秋冬新款羽绒服（黑色老花）",
+  "name_en": "LV P460 Down Jacket Black Monogram",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M76.jpg",
+   "/images/M76-1.jpg",
+   "/images/M76-2.jpg",
+   "/images/M76-3.jpg",
+   "/images/M76-4.jpg",
+   "/images/M76-5.jpg",
+   "/images/M76-6.jpg",
+   "/images/M76-7.jpg",
+   "/images/M76-8.jpg",
+   "/images/M76-9.jpg",
+   "/images/M76-10.jpg",
+   "/images/M76-11.jpg",
+   "/images/M76-12.jpg"
+  ],
+  "costCny": 465,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246910288",
+  "sold": 9
+ },
+ {
+  "id": "M77",
+  "code": "M77",
+  "name": "P410 LV 高端定制2026秋冬新款羽绒服（黑色，95绒）",
+  "name_en": "LV P410 Down Jacket Black",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M77.jpg",
+   "/images/M77-1.jpg",
+   "/images/M77-2.jpg",
+   "/images/M77-3.jpg",
+   "/images/M77-4.jpg",
+   "/images/M77-5.jpg",
+   "/images/M77-6.jpg",
+   "/images/M77-7.jpg",
+   "/images/M77-8.jpg",
+   "/images/M77-9.jpg",
+   "/images/M77-10.jpg",
+   "/images/M77-11.jpg",
+   "/images/M77-12.jpg",
+   "/images/M77-13.jpg"
+  ],
+  "costCny": 414,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1246910146",
+  "sold": 44
+ },
+ {
+  "id": "M78",
+  "code": "M78",
+  "name": "P560 LV 官网款2026秋冬新款羽绒服（灰黑老花）",
+  "name_en": "LV P560 Down Jacket Grey Monogram",
+  "brand": "Louis Vuitton",
+  "category": "clothing",
+  "price": null,
+  "currency": "USD",
+  "published": true,
+  "images": [
+   "/images/M78.jpg",
+   "/images/M78-1.jpg",
+   "/images/M78-2.jpg",
+   "/images/M78-3.jpg",
+   "/images/M78-4.jpg",
+   "/images/M78-5.jpg",
+   "/images/M78-6.jpg",
+   "/images/M78-7.jpg",
+   "/images/M78-8.jpg",
+   "/images/M78-9.jpg",
+   "/images/M78-10.jpg",
+   "/images/M78-11.jpg",
+   "/images/M78-12.jpg"
+  ],
+  "costCny": 566,
+  "supplier": "",
+  "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247084878",
+  "sold": 31
+ }
 ]
