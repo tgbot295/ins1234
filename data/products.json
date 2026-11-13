@@ -10,7 +10,15 @@
     "currency": "USD",
     "published": true,
     "images": [
-      "/images/M01.jpg"
+      "/images/M01.jpg",
+      "/images/M01-1.jpg",
+      "/images/M01-2.jpg",
+      "/images/M01-3.jpg",
+      "/images/M01-4.jpg",
+      "/images/M01-5.jpg",
+      "/images/M01-6.jpg",
+      "/images/M01-7.jpg",
+      "/images/M01-8.jpg"
     ],
     "costCny": 385,
     "supplier": "",
