@@ -93,9 +93,21 @@ function filtered() {
     (!q || p.name.toLowerCase().includes(q) || (p.name_en || '').toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.code.includes(q) || (p.variants || []).some((v) => v.code.includes(q) || v.color.toLowerCase().includes(q) || (v.color_en || '').toLowerCase().includes(q))));
 }
 
+function renderBrandCounts() {
+  const counts = {};
+  products.forEach((p) => { counts[p.brand] = (counts[p.brand] || 0) + 1; });
+  document.querySelectorAll('.brand-logo-btn').forEach((b) => {
+    const n = counts[b.dataset.brand] || 0;
+    let s = b.querySelector('.brand-count');
+    if (!s) { s = document.createElement('span'); s.className = 'brand-count'; b.appendChild(s); }
+    s.textContent = lang === 'zh' ? `${n} 件` : `${n} item${n === 1 ? '' : 's'}`;
+  });
+}
+
 function render() {
   // 品牌 Logo 按钮选中态
   document.querySelectorAll('.brand-logo-btn').forEach((b) => b.classList.toggle('active', b.dataset.brand === activeBrand));
+  renderBrandCounts();
   const clearBtn = document.getElementById('clearBrand');
   if (clearBtn) clearBtn.style.display = activeBrand ? '' : 'none';
   // 分类抽屉
