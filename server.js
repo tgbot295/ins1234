@@ -23,7 +23,6 @@ const ADMIN_USER = process.env.ADMIN_USER || 'admin01'; // 管理员账号（也
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '968574'; // 管理员密码（也可以在 .env 里用 ADMIN_PASSWORD 改）
 
 const DATA_FILE = path.join(__dirname, 'data', 'products.json');
-const VIDEOS_FILE = path.join(__dirname, 'data', 'videos.json');
 const UPLOAD_DIR = path.join(__dirname, 'public', 'uploads');
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
@@ -159,18 +158,6 @@ app.get('/api/products/:id', (req, res) => {
   const p = loadProducts().find((x) => String(x.id) === String(req.params.id) && x.published !== false);
   if (!p) return res.status(404).json({ ok: false, error: 'not found' });
   res.json({ ok: true, product: publicProduct(p) });
-});
-
-// 首页视频展示区：data/videos.json 就是清单，文件在 public/videos/
-function loadVideos() {
-  try {
-    return JSON.parse(fs.readFileSync(VIDEOS_FILE, 'utf-8'));
-  } catch (e) {
-    return [];
-  }
-}
-app.get('/api/videos', (req, res) => {
-  res.json({ ok: true, videos: loadVideos() });
 });
 
 // ---------- 管理后台 API ----------

@@ -7,10 +7,21 @@ let activeCat = 'all';
 let activeBrand = '';
 let query = '';
 let galImgs = [], galIdx = 0;
+let galMedia = []; // 详情画廊媒介列表：有视频的商品第一位是视频（截帧图当封面），后面是图片
+function buildMedia(p, imgs) {
+  galMedia = [];
+  if (p && p.video) galMedia.push({ t: 'v', src: p.video, poster: p.videoPoster || '' });
+  (imgs || []).forEach((s) => galMedia.push({ t: 'i', src: s }));
+  galImgs = galMedia.map((m) => (m.t === 'v' ? m.poster : m.src));
+}
+function pauseGalVideo() {
+  const gv = document.getElementById('galVideo');
+  if (gv) { try { gv.pause(); } catch (e) {} }
+}
 
 const I18N = {
-  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', color: 'Color', sold: 'sold', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands', videoTitle: 'Product Videos', videoSub: 'Real product videos — tap to play' },
-  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', color: '颜色', sold: '已售', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌', videoTitle: '商品视频', videoSub: '实拍视频 — 点开播放' }
+  en: { category: 'Category', search: 'Search', all: 'All Products', bags: 'Bags', clothing: 'Clothing', shoes: 'Shoes', accessories: 'Accessories', jewelry: 'Jewelry', viewDetails: 'View Details', code: 'Code', color: 'Color', sold: 'sold', contactUs: 'Contact Us', howTitle: 'How to order', how1: 'Browse a product and tap View Details.', how2: 'Tap WhatsApp — the message already includes the product name and code.', how3: 'Our customer service will confirm the price and shipping with you.', searchPh: 'Search products...', noResult: 'No products found.', feat1t: 'Worldwide Shipping', feat1s: 'USA · Canada · Japan · Korea', feat2t: 'WhatsApp Service', feat2s: 'Chat to order, fast reply', feat3t: 'New Arrivals Weekly', feat3s: 'Bags · Clothing · Shoes · Jewelry', feat4t: 'Handpicked Selection', feat4s: 'Quality checked before shipping', shopByBrand: 'Shop by Brand', allBrands: 'All Brands', videoTitle: 'Product Videos', videoSub: 'Tap a video to watch it big — order on WhatsApp' },
+  zh: { category: '分类', search: '搜索', all: '全部商品', bags: '包包', clothing: '衣服', shoes: '鞋子', accessories: '配饰', jewelry: '首饰', viewDetails: '看详情', code: '编号', color: '颜色', sold: '已售', contactUs: '联系客服', howTitle: '购买流程', how1: '浏览商品，点“看详情”。', how2: '点 WhatsApp，消息里已带好商品名和编号。', how3: '客服会跟你确认价格和运费。', searchPh: '搜索商品…', noResult: '没有找到商品。', feat1t: '全球发货', feat1s: '美国 · 加拿大 · 日本 · 韩国', feat2t: 'WhatsApp 客服', feat2s: '聊天下单，快速回复', feat3t: '每周上新', feat3s: '包包 · 衣服 · 鞋子 · 首饰', feat4t: '精选好物', feat4s: '发货前逐件质检', shopByBrand: '按品牌选购', allBrands: '全部品牌', videoTitle: '商品视频', videoSub: '点开看大视频 — WhatsApp 下单' }
 };
 const t = (k) => (I18N[lang] && I18N[lang][k]) || I18N.en[k] || k;
 const dispName = (p) => lang === 'zh' ? p.name : (p.name_en || p.name);
@@ -73,31 +84,6 @@ function applyLang() {
   document.getElementById('floatWa').href = waGeneral();
   localStorage.setItem('lang', lang);
   render();
-  if (window._videos) renderVideos();
-}
-
-// 首页视频展示区：封面卡片，点开原地播放；同时只播一个
-let videos = [];
-function renderVideos() {
-  const row = document.getElementById('videoRow');
-  if (!row) return;
-  window._videos = videos;
-  document.getElementById('videoSection').style.display = videos.length ? '' : 'none';
-  row.innerHTML = videos.map((v) => `
-    <div class="v-card">
-      <div class="v-media" data-file="${v.file}" data-poster="${v.poster || ''}">
-        <img src="${v.poster || ''}" alt="" loading="lazy">
-        <span class="v-play">▶</span>
-      </div>
-      <div class="v-cap"><b>${v.brand}</b><span>${lang === 'zh' ? v.title_zh : v.title_en}</span></div>
-    </div>`).join('');
-  row.querySelectorAll('.v-media').forEach((m) => {
-    m.onclick = () => {
-      if (m.querySelector('video')) return;
-      row.querySelectorAll('video').forEach((o) => { o.pause(); });
-      m.innerHTML = `<video src="${m.dataset.file}" poster="${m.dataset.poster}" controls autoplay playsinline></video>`;
-    };
-  });
 }
 
 function filtered() {
@@ -128,6 +114,7 @@ function render() {
         <div class="card" data-id="${p.id}">
           <button class="share-btn" title="Share" aria-label="Share"><svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z"/></svg></button>
           <img src="${p.images[0] || ''}" alt="" loading="lazy">
+          ${p.video ? '<span class="vd-badge">▶</span>' : ''}
           <div class="name">${dispName(p)}</div>
           ${soldText(p) ? `<div class="sold">${soldText(p)}</div>` : ''}
           ${p.variants && p.variants.length > 1 ? `<div class="var-colors">${p.variants.map((v) => varLabel(v)).join(' · ')}</div>` : ''}
@@ -151,6 +138,7 @@ function openDetail(p) {
   window._curP = p;
   window._curV = 0;
   galImgs = p.images && p.images.length ? p.images : [];
+  buildMedia(p, galImgs);
   galIdx = 0;
   document.getElementById('dName').textContent = dispName(p);
   document.getElementById('dBrand').textContent = p.brand;
@@ -176,6 +164,7 @@ function selectVariant(p, i) {
   const v = p.variants[i];
   if (!v) return;
   galImgs = [v.image];
+  buildMedia(p, galImgs);
   galIdx = 0;
   document.getElementById('dCode').textContent = v.code;
   document.getElementById('dWa').href = waLink(p);
@@ -184,27 +173,41 @@ function selectVariant(p, i) {
 }
 function showGal() {
   const img = document.getElementById('galImg');
-  img.src = galImgs[galIdx] || '';
+  const vid = document.getElementById('galVideo');
+  const m = galMedia[galIdx];
+  if (m && m.t === 'v') {
+    img.classList.add('hidden');
+    vid.classList.remove('hidden');
+    if (vid.getAttribute('src') !== m.src) { vid.src = m.src; vid.poster = m.poster || ''; }
+    vid.play().catch(() => {});
+  } else {
+    pauseGalVideo();
+    vid.classList.add('hidden');
+    img.classList.remove('hidden');
+    img.src = m ? m.src : '';
+  }
   const ds = document.getElementById('dShare');
   if (ds && window._curP) ds.onclick = (e) => { e.preventDefault(); openShare(window._curP, galImgs[galIdx]); };
-  document.getElementById('galCount').textContent = galImgs.length ? `${galIdx + 1}/${galImgs.length}` : '';
-  document.getElementById('galThumbs').innerHTML = galImgs.map((s, i) =>
-    `<img src="${s}" class="${i === galIdx ? 'active' : ''}" data-i="${i}">`).join('');
-  document.querySelectorAll('#galThumbs img').forEach((th) => th.onclick = () => { galIdx = +th.dataset.i; showGal(); });
+  document.getElementById('galCount').textContent = galMedia.length ? `${galIdx + 1}/${galMedia.length}` : '';
+  document.getElementById('galThumbs').innerHTML = galMedia.map((mm, i) =>
+    mm.t === 'v'
+      ? `<span class="th-vid ${i === galIdx ? 'active' : ''}" data-i="${i}"><img src="${mm.poster}" alt=""><i>▶</i></span>`
+      : `<img src="${mm.src}" class="${i === galIdx ? 'active' : ''}" data-i="${i}">`).join('');
+  document.querySelectorAll('#galThumbs [data-i]').forEach((th) => th.onclick = () => { galIdx = +th.dataset.i; showGal(); });
 }
-document.getElementById('galPrev').onclick = () => { galIdx = (galIdx - 1 + galImgs.length) % galImgs.length; showGal(); };
-document.getElementById('galNext').onclick = () => { galIdx = (galIdx + 1) % galImgs.length; showGal(); };
+document.getElementById('galPrev').onclick = () => { galIdx = (galIdx - 1 + galMedia.length) % galMedia.length; showGal(); };
+document.getElementById('galNext').onclick = () => { galIdx = (galIdx + 1) % galMedia.length; showGal(); };
 let touchX = null;
 const galImg = document.getElementById('galImg');
 galImg.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; }, { passive: true });
 galImg.addEventListener('touchend', (e) => {
   if (touchX == null) return;
   const dx = e.changedTouches[0].clientX - touchX;
-  if (Math.abs(dx) > 40) { galIdx = dx < 0 ? (galIdx + 1) % galImgs.length : (galIdx - 1 + galImgs.length) % galImgs.length; showGal(); }
+  if (Math.abs(dx) > 40) { galIdx = dx < 0 ? (galIdx + 1) % galMedia.length : (galIdx - 1 + galMedia.length) % galMedia.length; showGal(); }
   touchX = null;
 }, { passive: true });
-document.getElementById('detailClose').onclick = () => document.getElementById('detailModal').classList.add('hidden');
-document.getElementById('detailModal').onclick = (e) => { if (e.target.id === 'detailModal') e.target.classList.add('hidden'); };
+document.getElementById('detailClose').onclick = () => { pauseGalVideo(); document.getElementById('detailModal').classList.add('hidden'); };
+document.getElementById('detailModal').onclick = (e) => { if (e.target.id === 'detailModal') { pauseGalVideo(); e.target.classList.add('hidden'); } };
 
 document.getElementById('shareClose').onclick = closeShare;
 document.getElementById('shareModal').onclick = (e) => { if (e.target.id === 'shareModal') closeShare(); };
@@ -301,7 +304,5 @@ document.getElementById('clearBrand').onclick = () => { activeBrand = ''; render
 (async function init() {
   try { const c = await (await fetch('/api/config')).json(); if (c.ok) cfg = c; } catch (e) {}
   try { const r = await (await fetch('/api/products')).json(); products = r.products || []; } catch (e) { products = []; }
-  try { const vr = await (await fetch('/api/videos')).json(); videos = vr.videos || []; } catch (e) { videos = []; }
-  renderVideos();
   applyLang();
 })();
