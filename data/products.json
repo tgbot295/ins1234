@@ -441,7 +441,15 @@
     "currency": "USD",
     "published": true,
     "images": [
-      "/images/M24.jpg"
+      "/images/M24.jpg",
+      "/images/M24-1.jpg",
+      "/images/M24-2.jpg",
+      "/images/M24-3.jpg",
+      "/images/M24-4.jpg",
+      "/images/M24-5.jpg",
+      "/images/M24-6.jpg",
+      "/images/M24-7.jpg",
+      "/images/M24-8.jpg"
     ],
     "variants": [
       {
