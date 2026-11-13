@@ -627,56 +627,6 @@
     "sold": 99
   },
   {
-    "id": "M37",
-    "code": "M37",
-    "name": "Loro Piana 乐福鞋",
-    "name_en": "Loro Piana Loafers",
-    "brand": "Loro Piana",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M37.jpg"
-    ],
-    "video": "/videos/M37.mp4",
-    "videoPoster": "/videos/M37-poster.jpg",
-    "variants": [
-      {
-        "color": "雾霾蓝",
-        "color_en": "Haze Blue",
-        "code": "M37",
-        "image": "/images/M37.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "粉色",
-        "color_en": "Pink",
-        "code": "M38",
-        "image": "/images/M38.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "黑色",
-        "color_en": "Black",
-        "code": "M39",
-        "image": "/images/M39.jpg",
-        "costCny": 260
-      },
-      {
-        "color": "南极白",
-        "color_en": "White",
-        "code": "M40",
-        "image": "/images/M40.jpg",
-        "costCny": 260
-      }
-    ],
-    "costCny": 260,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1243635150",
-    "sold": 4
-  },
-  {
     "id": "M41",
     "code": "M41",
     "name": "Balenciaga COMBAT STRIKE 拉链靴",
@@ -728,24 +678,6 @@
     "costCny": 340,
     "supplier": "",
     "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824992",
-    "sold": 0
-  },
-  {
-    "id": "M44",
-    "code": "M44",
-    "name": "Ferragamo 休闲套脚男鞋",
-    "name_en": "Ferragamo Slip-On Loafers",
-    "brand": "Ferragamo",
-    "category": "shoes",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M44.jpg"
-    ],
-    "costCny": 170,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252824969",
     "sold": 0
   },
   {
@@ -819,42 +751,6 @@
     "supplier": "",
     "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252829794",
     "sold": 9
-  },
-  {
-    "id": "M49",
-    "code": "M49",
-    "name": "APM Monaco 御邪之眼小蛮腰项链",
-    "name_en": "APM Monaco Evil Eye Necklace",
-    "brand": "APM Monaco",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M49.jpg"
-    ],
-    "costCny": 70,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834988",
-    "sold": 60
-  },
-  {
-    "id": "M50",
-    "code": "M50",
-    "name": "Swarovski 射手座守护神锁骨项链",
-    "name_en": "Swarovski Sagittarius Guardian Necklace",
-    "brand": "Swarovski",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M50.jpg"
-    ],
-    "costCny": 50,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1252834962",
-    "sold": 35
   },
   {
     "id": "M51",
@@ -1929,29 +1825,6 @@
     "sold": 5
   },
   {
-    "id": "M97",
-    "code": "M97",
-    "name": "Loro Piana 立领拉链夹克 P413",
-    "name_en": "Loro Piana Stand Collar Zip Jacket P413",
-    "brand": "Loro Piana",
-    "category": "clothing",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M97.jpg",
-      "/images/M97-1.jpg",
-      "/images/M97-2.jpg",
-      "/images/M97-3.jpg",
-      "/images/M97-4.jpg",
-      "/images/M97-5.jpg"
-    ],
-    "costCny": 417,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1247087350",
-    "sold": 3
-  },
-  {
     "id": "M99",
     "code": "M99",
     "name": "普拉达 三角标口袋夹克大衣（黑）",
@@ -2238,32 +2111,6 @@
     "supplier": "",
     "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1253433911",
     "sold": 0
-  },
-  {
-    "id": "M110",
-    "code": "M110",
-    "name": "蒂芙尼 绿松石爱心吊坠项链",
-    "name_en": "Tiffany & Co. Turquoise Heart Pendant Necklace",
-    "brand": "Tiffany & Co.",
-    "category": "jewelry",
-    "price": null,
-    "currency": "USD",
-    "published": true,
-    "images": [
-      "/images/M110.jpg",
-      "/images/M110-1.jpg",
-      "/images/M110-2.jpg",
-      "/images/M110-3.jpg",
-      "/images/M110-4.jpg",
-      "/images/M110-5.jpg",
-      "/images/M110-6.jpg",
-      "/images/M110-7.jpg",
-      "/images/M110-8.jpg"
-    ],
-    "costCny": 70,
-    "supplier": "",
-    "sourceUrl": "https://gxhy1688.com/detailIndex?marketCode=gz&code=1253433842",
-    "sold": 4
   },
   {
     "id": "M111",
