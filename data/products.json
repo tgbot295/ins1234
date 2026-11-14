@@ -737,9 +737,21 @@
     "currency": "USD",
     "published": true,
     "images": [
-      "/images/M32.jpg"
+      "/images/M161.jpg",
+      "/images/M161-1.jpg",
+      "/images/M161-2.jpg",
+      "/images/M161-3.jpg",
+      "/images/M161-4.jpg",
+      "/images/M161-5.jpg"
     ],
     "variants": [
+      {
+        "color": "黑色",
+        "color_en": "Black",
+        "code": "M161",
+        "image": "/images/M161.jpg",
+        "costCny": 200
+      },
       {
         "color": "橙色",
         "color_en": "Orange",
